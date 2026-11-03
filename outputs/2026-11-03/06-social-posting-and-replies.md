@@ -1,35 +1,38 @@
-<!-- AI Creative & Video Marketing Agency | Social Media Manager | 2026-11-03 13:41:03 | model: gemini-flash-lite-latest -->
+<!-- AI Creative & Video Marketing Agency | Social Media Manager | 2026-11-03 17:57:12 | model: gemini-flash-lite-latest -->
 ### 1. Posting Plan for Video 1
 
 | Platform | Best time | Caption version | Hashtags |
 | :--- | :--- | :--- | :--- |
-| TikTok | 7:30 PM | No time to waste. Grab your NovaBrew and own your morning! ☕️✨ | #NovaBrew #MorningRoutine #StudentLife #ColdBrew |
+| TikTok | 18:00 | Crank up the volume. 🧊✨ Pop the blue, feel the orange with NovaBrew! | #NovaBrew #ColdBrew #CoffeeTok #ASMR |
+| Instagram Reels | 12:30 | Crank up the volume. 🧊✨ Pop the blue, feel the orange with NovaBrew! | #NovaBrew #ColdBrew #CoffeeGram #ASMR |
+| YouTube Shorts | 15:00 | Crank up the volume. 🧊✨ Pop the blue, feel the orange with NovaBrew! | #NovaBrew #ColdBrew #Shorts #ASMR |
 
 ---
 
-### 2. Brand Rules Check
+### 2. Caption Brand Rules Check
 
-* **Day 1 Caption:** OK
-* **Day 2 Caption:** OK
+* **Video 1 Caption:** "Crank up the volume. 🧊✨ Pop the blue, feel the orange with NovaBrew! #NovaBrew #ColdBrew #CoffeeTok #ASMR"
+  * **Result:** **OK** (Brand name is correct, colors mentioned, no health claims, simple English).
 
-*(Note: Both captions follow the brand name rule, avoid health claims, and match the energetic, friendly tone.)*
+* **Video 2 Caption:** "We’ve all been there. 🏃💨 Tag a friend who is always late! #NovaBrew #StudentLife #MorningRoutine #CoffeeLovers"
+  * **Result:** **OK** (Brand name is correct, no health claims, simple English).
 
 ---
 
 ### 3. Follower Comments & Replies
 
 #### a) "Where can I buy this in Riga?"
-* **Category:** Question
-* **Reply:** Hey! We are rolling out across Europe right now. Check the link in our bio for local stockists near you! 💙
+* **Type:** Question
+* **Reply:** Hey! You can find NovaBrew in local supermarkets across Riga. Check our store locator in bio! 🛒
 
 #### b) "Too sweet for me :("
-* **Category:** Complaint
-* **Reply:** Thanks for trying it! We appreciate the feedback and will share it with our team. 🍊
+* **Type:** Complaint
+* **Reply:** Thanks for the feedback! NovaBrew is bold and smooth, but we hear you. Stay tuned for new flavors! 🧊
 
 #### c) "Love the can design!!"
-* **Category:** Praise
-* **Reply:** Thank you! We love our deep blue and warm orange look too. ✨
+* **Type:** Praise
+* **Reply:** Thank you! We love our deep blue and warm orange look too. 🧡💙
 
 #### d) "Check my profile for free followers"
-* **Category:** Spam
-* **Reply:** *(Hide/Delete comment)*
+* **Type:** Spam
+* **Reply:** *[Hidden by Moderator]*

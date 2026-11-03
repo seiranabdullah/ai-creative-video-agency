@@ -1,33 +1,32 @@
-<!-- AI Creative & Video Marketing Agency | Market Researcher | 2026-11-03 13:40:40 | model: gemini-flash-lite-latest -->
+<!-- AI Creative & Video Marketing Agency | Market Researcher | 2026-11-03 17:56:30 | model: gemini-flash-lite-latest -->
 # NovaBrew Market Research Brief
 
-## 1. Audience Insights
-* **What they like:** Fast-paced content, relatable daily struggles, aesthetic visuals (deep blue and warm orange vibes), and convenience on a budget.
-* **Where they watch:** TikTok (for entertainment and trends), Instagram Reels (for lifestyle and aesthetics), and YouTube Shorts (for quick daily snackable content).
-* **Behavior:** They drink coffee on the go—walking to lectures, commuting to work, or studying in libraries. They skip ads instantly if the first 2 seconds are boring.
+## 1. Audience Insights (Ages 18-30, Europe)
+* **High-speed lifestyle:** Students and young professionals juggle busy schedules. They need quick, tasty energy on the go.
+* **Aesthetic-driven:** They love visually pleasing content. They spot trends fast and value brand vibes and colors.
+* **Platform habits:** They spend their time scrolling TikTok FYP, Instagram Reels, and YouTube Shorts for quick entertainment.
 
 ---
 
-## 2. Short-Video Trends & Formats
-1. **POV formats:** "POV: You have a 9 AM lecture and 2 minutes to wake up."
-2. **ASMR sounds:** Satisfying pop of the can, ice pouring, and first-sip reactions.
-3. **Transition magic:** Snapping fingers to transform a messy desk into an aesthetic study setup with NovaBrew.
-4. **Day-in-the-life vlogs:** Fast cuts of young professionals surviving the afternoon slump.
-5. **Relatable text-on-screen:** Short, funny statements about adulting paired with trending audio.
-
----
-
-## 3. Competitor Landscape
-
-| Competitor Type | What They Do Well |
+## 2. Short-Video Trends (15-30 Seconds)
+| Trend / Format | Why It Works for NovaBrew |
 | :--- | :--- |
-| **Global Energy Drink Brands** | High-energy editing, great use of fast music, strong lifestyle branding. |
-| **Established RTD Coffee Brands** | Clean product shots, wide retail distribution, clear branding in deep blue/brown tones. |
-| **Indie Specialty Coffee Shops** | Authentic storytelling, cozy vibes, strong community engagement with students. |
+| **"POV" (Point of View)** | Relatable morning struggles connect instantly with the viewer. |
+| **ASMR Pour** | Satisfying sounds of the can cracking open grab attention in the first 2 seconds. |
+| **Day in the Life (Vlog)** | Shows NovaBrew naturally fitting into a trendy study or work routine. |
+| **Beat-Drop Transitions** | Fast cuts matched to trending music keep eyes on the screen. |
+| **Behind-the-Scenes** | Raw, unpolished factory or office peeks build brand trust. |
 
 ---
 
-## 4. Brand Opportunities for NovaBrew
-1. **Color Cues:** Use the striking deep blue and warm orange branding in every video backdrop, outfit, or can placement to build instant recognition.
-2. **Campus Hustle Content:** Partner with student creators ([Creator 1], [Creator 2]) to show NovaBrew as the ultimate study fuel without making any health claims.
-3. **The 2-Second Hook Challenge:** Test high-energy openings featuring the loud *pop* of the NovaBrew can to stop the scroll instantly.
+## 3. Competitor Analysis
+* **Mass Energy Drink Brands:** They do high-energy stunts and extreme sports well, but lack a cozy, premium coffee feel.
+* **Big Coffee Chains (RTD lines):** They leverage strong name recognition, but their content can feel corporate and boring.
+* **Indie Cold Brew Startups:** They nail aesthetic, lo-fi TikTok videos, but often lack big campaign budgets.
+
+---
+
+## 4. Market Opportunities
+1. **The Deep Blue & Warm Orange Visual Hook:** Use our brand colors boldly in every first frame. Bright orange cans pop against deep blue backgrounds to stop the scroll.
+2. **Relatable Study & Work Hacks:** Partner with micro-influencers like [Creator 1] to show NovaBrew as the ultimate focus fuel during late-night study sessions.
+3. **Simple, No-Stress Messaging:** Keep the text overlay clean and fun. Focus purely on great taste and convenience, avoiding any health claims.

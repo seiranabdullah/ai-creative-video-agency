@@ -1,46 +1,54 @@
-<!-- AI Creative & Video Marketing Agency | Graphic Designer | 2026-11-03 13:40:55 | model: gemini-flash-lite-latest -->
-## 1. Visual Style Guide
+<!-- AI Creative & Video Marketing Agency | Graphic Designer | 2026-11-03 17:56:56 | model: gemini-flash-lite-latest -->
+### 1. Visual Style Guide
 
-### Colors (Hex Codes)
-* Deep Blue: `#0A192F`
-* Warm Orange: `#FF6B35`
-* Clean White: `#FFFFFF`
+**Colors (Hex Codes):**
+* Deep Blue: `#0F172A` (Primary brand background)
+* Warm Orange: `#F97316` (Highlight and accent color)
+* Crisp White: `#FFFFFF` (Text and clean details)
 
-### Fonts
-* Headline: Bold Sans-Serif (Modern, loud, easy to read on mobile)
-* Body: Clean Sans-Serif (Simple, friendly, minimalist)
-* Accent: Rounded Script (Used sparingly for youth appeal)
+**Fonts:**
+* Headline: Bold Sans-Serif (Modern, loud, easy to read)
+* Body: Clean Modern Sans-Serif (Simple, friendly, minimalist)
+* Accent: Rounded Marker Style (For fun TikTok/Reels overlays)
 
-### Mood
-* Fast, fresh, and energetic
-* Cozy yet modern student lifestyle
-* Bright, clean lighting with bold color pops
-
----
-
-## 2. AI Image Prompts
-
-```text
-A vibrant YouTube thumbnail, a young European student smiling, holding a ready-to-drink coffee can labeled NovaBrew, deep blue and warm orange background, modern aesthetic, high contrast, studio lighting --ar 16:9
-```
-
-```text
-A sleek product photography shot of a single NovaBrew cold brew can, condensation drops on the surface, deep blue studio backdrop with warm orange neon rim lighting, minimalist, 4k --ar 1:1
-```
-
-```text
-A social media post, a stylish aesthetic desk setup, a can of NovaBrew, matching deep blue notebooks and warm orange pens, soft natural sunlight, cozy student vibe --ar 4:5
-```
-
-```text
-An Instagram story background, abstract minimalist shapes in deep blue and warm orange, clean empty space in the center for text, modern graphic design --ar 9:16
-```
+**Mood:**
+* Energetic and fast-paced
+* Friendly and approachable
+* Modern and clean youth aesthetic
 
 ---
 
-## 3. Campaign Design Rules
+### 2. AI Image Prompts
 
-* **Brand Name:** Always write the brand name clearly as NovaBrew on all packaging and graphics.
-* **Color Balance:** Use deep blue as the primary background color and warm orange as the key accent color.
-* **No Health Claims:** Keep text focused on taste, style, and energy; avoid any medical or health promises.
-* **Mobile-First:** Keep all key visuals centered and easy to see on small smartphone screens.
+**Thumbnail**
+```text
+A dynamic YouTube thumbnail featuring a warm orange NovaBrew can front and center, dramatic lighting, deep blue background, bold typography space, high contrast, 4k resolution --ar 16:9
+```
+*Size/Aspect Ratio:* 16:9 (1920x1080)
+
+**Product Shot**
+```text
+A sleek product photograph of a NovaBrew ready-to-drink cold brew can, sitting on a concrete desk with ice cubes and coffee beans scattered around, neon warm orange and deep blue studio lighting, commercial photography --ar 4:5
+```
+*Size/Aspect Ratio:* 4:5 (1080x1350)
+
+**Social Post**
+```text
+A lifestyle flat lay for Instagram, a trendy European student desk, a warm orange NovaBrew can, a smartphone, a minimalist notebook, deep blue accents, bright daylight, aesthetic vibe --ar 1:1
+```
+*Size/Aspect Ratio:* 1:1 (1080x1080)
+
+**Story Background**
+```text
+An abstract vertical background for Instagram Stories, smooth gradient of deep blue and glowing warm orange, subtle coffee bean shapes floating, clean space in the middle for text --ar 9:16
+```
+*Size/Aspect Ratio:* 9:16 (1080x1920)
+
+---
+
+### 3. Campaign Design Rules
+
+* **Brand Name:** Always write **NovaBrew** clearly on every product shot and video overlay.
+* **Color Rule:** Use the 80/20 rule: deep blue as the base, warm orange as the main pop of color.
+* **Text Check:** Keep text on screen short, large, and placed safely away from TikTok/Reels UI buttons.
+* **No Health Claims:** Stick strictly to lifestyle, taste, and convenience; do not claim health or wellness benefits.

@@ -1,38 +1,36 @@
-<!-- AI Creative & Video Marketing Agency | Copywriter | 2026-11-03 13:40:50 | model: gemini-flash-lite-latest -->
-### Day 1: TikTok
+<!-- AI Creative & Video Marketing Agency | Copywriter | 2026-11-03 17:56:48 | model: gemini-flash-lite-latest -->
+### Video 1: ASMR Pour (TikTok)
 
-* **Title:** Running Late for 9 AM
-* **Hook (0-2s):** [Creator 1] stares at a clock reading 8:52 AM, panics, and grabs a NovaBrew can. Loud *POP!* sound.
+* **Title:** The Ultimate Coffee ASMR
+* **Hook (First 2 seconds):** Crisp *pop* of the can lid, slow-motion splash against deep blue and warm orange lights.
 
-| Time | What we see | Voice-over / text on screen |
+| Time | What we see | Voice-over / Text on screen |
 | :--- | :--- | :--- |
-| **0-2s** | Clock at 8:52 AM, close-up on NovaBrew can opening with a loud *POP!* | *Text:* Running late again? |
-| **2-15s** | Fast cuts: [Creator 1] sprints down the hallway, jumps on a bicycle, and sips NovaBrew. | No time for lines. Grab your NovaBrew and go! |
-| **15-20s** | [Creator 1] walks into the lecture hall, looking fresh with the deep blue and warm orange can. | Ready for the day. |
+| 00:00 - 00:05 | Close-up on the warm orange NovaBrew can. A hand opens it. | *Pop!* Ready for your new favorite cold brew? |
+| 00:05 - 00:15 | Slow pour of dark coffee over ice cubes in a glass. | Smooth, bold flavor. Zero hassle. Just pure chill. |
+| 00:15 - 00:20 | Taking the first refreshing sip while smiling at the camera. | Grab a NovaBrew and taste the vibe. |
 
-* **Caption:** No time to waste. Grab your NovaBrew and own your morning! ☕️✨
-* **Hashtags:** #NovaBrew #MorningRoutine #StudentLife #ColdBrew
+* **Caption:** Crank up the volume. 🧊✨ Pop the blue, feel the orange with NovaBrew! #NovaBrew #ColdBrew #CoffeeTok #ASMR
 
 ---
 
-### Day 2: Instagram Reels
+### Video 2: POV Late Lecture (Instagram Reels)
 
-* **Title:** Aesthetic Desk Magic
-* **Hook (0-2s):** A messy desk with papers everywhere. [Creator 2] snaps fingers right at the camera.
+* **Title:** POV: You Overslept
+* **Hook (First 2 seconds):** Alarm clock ringing loudly at 8:45 AM, eyes wide open in panic.
 
-| Time | What we see | Voice-over / text on screen |
+| Time | What we see | Voice-over / Text on screen |
 | :--- | :--- | :--- |
-| **0-2s** | Messy desk. Snap fingers. | *Text:* Reset your study vibe. |
-| **2-12s** | Screen flashes to a clean desk. Deep blue and warm orange accessories match the NovaBrew can perfectly. | Aesthetic check. Your study space just got an upgrade. |
-| **12-20s** | [Creator 2] takes a relaxed sip from the can, smiling at the camera. | Fuel your focus with NovaBrew. |
+| 00:00 - 00:05 | Rushing out of bed, grabbing shoes in a hurry. | POV: You overslept for your 9 AM lecture. |
+| 00:05 - 00:15 | Running to the fridge, grabbing a cold NovaBrew can, and locking the door. | No time for a coffee shop line. Grab your backup. |
+| 00:15 - 00:25 | Walking into class calmly, sipping NovaBrew. Deep blue bag, warm orange can. | NovaBrew always saves the day. Grab and go! |
 
-* **Caption:** Clean desk, clear mind. How do you style your study space? 🍊💙
-* **Hashtags:** #NovaBrew #StudyVibes #AestheticDesk #ColdBrewCoffee
+* **Caption:** We’ve all been there. 🏃💨 Tag a friend who is always late! #NovaBrew #StudentLife #MorningRoutine #CoffeeLovers
 
 ---
 
 ### 3 Extra Hook Ideas
 
-1. **The Afternoon Slump:** "Is it 3 PM or is my brain actually melting?" *(Show NovaBrew can)*
-2. **Library Survival:** "POV: You have 5 hours of studying left and zero energy." *(Tap the NovaBrew can)*
-3. **Commute Struggle:** "Never wait in a coffee queue again." *(Show the loud pop of the can)*
+1. "Stop scrolling if you need a cold coffee right now."
+2. "How to upgrade your study setup in two seconds flat."
+3. "Wait until you hear this satisfying coffee pour."

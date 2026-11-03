@@ -1,44 +1,41 @@
-<!-- AI Creative & Video Marketing Agency | Video Editor | 2026-11-03 13:40:59 | model: gemini-flash-lite-latest -->
-## Video 1: Editing Plan & Production Guide
+<!-- AI Creative & Video Marketing Agency | Video Editor | 2026-11-03 17:57:05 | model: gemini-flash-lite-latest -->
+### Video 1 Edit Plan & Production Guide
 
-### 1. Storyboard Table
+#### 1. Storyboard Table
 
-| Scene | Seconds | Shot | On-Screen Text | Music/Sound |
+| Scene | Seconds | Shot | On-Screen Text | Music / Sound |
 | :--- | :--- | :--- | :--- | :--- |
-| **1** | 0–2s | Close-up | Running late again? | Loud *POP!* sound, fast beat starts |
-| **2** | 2–15s | Fast cuts, wide to medium | No time for lines. Grab your NovaBrew and go! | Upbeat, energetic electronic track |
-| **3** | 15–20s | Medium shot | Ready for the day. | Music fades out, satisfying sip sound |
+| 1 | 00:00 - 00:02 | Extreme close-up | *Pop!* | Loud *POP* sound, bass drop. |
+| 2 | 00:02 - 00:05 | Close-up | Ready for your new favorite? | Upbeat, rhythmic lofi beat starts. |
+| 3 | 00:05 - 00:15 | Slow-motion macro shot | Smooth, bold flavor. | Ice cubes clinking, liquid pouring. |
+| 4 | 00:15 - 00:20 | Medium shot | Grab a NovaBrew. | Satisfied sigh, cheerful chime. |
 
 ---
 
-### 2. Shot List for Filming Day
-1. Close-up of a digital clock showing 8:52 AM.
-2. Close-up of hands opening a NovaBrew can (*POP!*).
-3. Wide shot of [Creator 1] looking at the clock and panicking.
-4. Tracking shot of [Creator 1] sprinting down a hallway.
-5. Action shot of [Creator 1] jumping on a bicycle.
-6. Medium shot of [Creator 1] sipping NovaBrew while riding.
-7. Medium shot of [Creator 1] walking into the lecture hall, holding the deep blue and warm orange can.
+#### 2. Shot List (Filming Day)
+
+1. Extreme close-up of [Creator 1]’s hands popping the can tab.
+2. Lighting setup: Deep blue backlight (`#0F172A`) with a warm orange rim light (`#F97316`).
+3. Slow-motion pour of dark coffee into a glass filled with clear ice.
+4. Close-up of the warm orange NovaBrew can sitting on a clean surface.
+5. Medium shot of [Creator 1] taking a refreshing first sip and smiling.
+6. B-roll of the can spinning on a flat surface with studio lighting.
 
 ---
 
-### 3. Edit Plan
-* **Cuts:** Fast-paced J-cuts and L-cuts to match the music beat. Keep every shot under 2 seconds during the running sequence.
-* **Transitions:** Whip pans and quick zoom transitions to keep high energy.
-* **Subtitles:** Bold Sans-Serif font. Use clean white text with a drop shadow. Highlight key words in warm orange (`#FF6B35`). 
+#### 3. Edit Plan
+
+* **Cuts:** Fast, rhythmic cuts on beats 1 and 3 during the first 5 seconds.
+* **Transitions:** Smooth zoom-ins and quick whip pans. No complex effects.
+* **Subtitles:** Center-aligned, Bold Sans-Serif font in Crisp White (`#FFFFFF`), with a Warm Orange (`#F97316`) highlight on key words like "NovaBrew" and "chill".
 * **Export Settings:** 
-  * Aspect Ratio: 9:16 vertical
-  * Resolution: 1080x1920 pixels
+  * Aspect Ratio: 9:16 vertical 
+  * Resolution: 1080x1920
   * Frame Rate: 30 fps
 
 ---
 
-### 4. AI Video Prompts (Runway / Sora)
+#### 4. AI Video Prompts
 
-```text
-A close-up action shot of a young European student's hand popping open a ready-to-drink coffee can labeled NovaBrew, condensation drops, deep blue and warm orange background, high energy, 4k --ar 9:16
-```
-
-```text
-A fast-paced first-person tracking shot of a young student sprinting down a bright hallway holding a NovaBrew cold brew can, dynamic motion blur, modern university setting, vibrant lighting --ar 9:16
-```
+* **Prompt 1:** `A macro shot of a warm orange aluminum can opening in slow motion, droplets of water on the surface, dramatic deep blue and warm orange studio lighting, 4k resolution, vertical --ar 9:16`
+* **Prompt 2:** `Cinematic slow-motion pour of dark iced coffee into a clear glass, dark minimalist background with neon blue and orange accents, commercial style, vertical --ar 9:16`
