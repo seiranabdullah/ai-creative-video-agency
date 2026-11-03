@@ -1,0 +1,79 @@
+{
+  "agency": "AI Creative & Video Marketing Agency",
+  "client": "NovaBrew Coffee",
+  "created": "2026-11-03",
+  "employees": [
+    {
+      "agent": "Market Researcher",
+      "id": "market-researcher",
+      "kit": "seo-employee",
+      "version": "1.10.0",
+      "installed_on": "2026-11-03",
+      "files": 47,
+      "receipt": "employees/market-researcher/.installed.json"
+    },
+    {
+      "agent": "Marketing Coordinator",
+      "id": "marketing-coordinator",
+      "kit": "gtm-engineer",
+      "version": "1.9.0",
+      "installed_on": "2026-11-03",
+      "files": 40,
+      "receipt": "employees/marketing-coordinator/.installed.json"
+    },
+    {
+      "agent": "Copywriter",
+      "id": "copywriter",
+      "kit": "social-media-employee",
+      "version": "1.9.0",
+      "installed_on": "2026-11-03",
+      "files": 39,
+      "receipt": "employees/copywriter/.installed.json"
+    },
+    {
+      "agent": "Graphic Designer",
+      "id": "graphic-designer",
+      "kit": "web-dev-employee",
+      "version": "1.9.0",
+      "installed_on": "2026-11-03",
+      "files": 41,
+      "receipt": "employees/graphic-designer/.installed.json"
+    },
+    {
+      "agent": "Video Editor",
+      "id": "video-editor",
+      "kit": "ad-manager-employee",
+      "version": "1.9.0",
+      "installed_on": "2026-11-03",
+      "files": 42,
+      "receipt": "employees/video-editor/.installed.json"
+    },
+    {
+      "agent": "Social Media Manager",
+      "id": "social-media-manager",
+      "kit": "customer-satisfaction-employee",
+      "version": "1.9.0",
+      "installed_on": "2026-11-03",
+      "files": 40,
+      "receipt": "employees/social-media-manager/.installed.json"
+    },
+    {
+      "agent": "Sales & Partnerships Manager",
+      "id": "sales-partnerships-manager",
+      "kit": "sales-employee",
+      "version": "1.9.0",
+      "installed_on": "2026-11-03",
+      "files": 39,
+      "receipt": "employees/sales-partnerships-manager/.installed.json"
+    },
+    {
+      "agent": "Project Manager",
+      "id": "project-manager",
+      "kit": "chief-of-staff",
+      "version": "1.9.0",
+      "installed_on": "2026-11-03",
+      "files": 38,
+      "receipt": "employees/project-manager/.installed.json"
+    }
+  ]
+}
