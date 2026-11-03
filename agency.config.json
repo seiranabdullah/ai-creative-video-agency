@@ -1,0 +1,28 @@
+{
+  "agency": "AI Creative & Video Marketing Agency",
+  "client": {
+    "brand": "NovaBrew Coffee",
+    "product": "NovaBrew Cold Brew, a ready-to-drink cold coffee in a can",
+    "audience": "students and young professionals aged 18-30 in Europe",
+    "goal": "launch the new cold brew with short videos and grow Instagram and TikTok followers",
+    "tone": "energetic, friendly, simple English",
+    "brand_rules": [
+      "Always write the brand name as NovaBrew",
+      "Main colors: deep blue and warm orange",
+      "No health claims (for example: do not say it makes you healthier)",
+      "Videos are 15 to 30 seconds and start with a hook in the first 2 seconds"
+    ],
+    "platforms": ["TikTok", "Instagram Reels", "YouTube Shorts"]
+  },
+  "report_email": "",
+  "agents": [
+    { "id": "market-researcher",            "name": "Market Researcher",           "kit": "seo-employee" },
+    { "id": "marketing-coordinator",        "name": "Marketing Coordinator",       "kit": "gtm-engineer" },
+    { "id": "copywriter",                   "name": "Copywriter",                  "kit": "social-media-employee" },
+    { "id": "graphic-designer",             "name": "Graphic Designer",            "kit": "web-dev-employee" },
+    { "id": "video-editor",                 "name": "Video Editor",                "kit": "ad-manager-employee" },
+    { "id": "social-media-manager",         "name": "Social Media Manager",        "kit": "customer-satisfaction-employee" },
+    { "id": "sales-partnerships-manager",   "name": "Sales & Partnerships Manager","kit": "sales-employee" },
+    { "id": "project-manager",              "name": "Project Manager",             "kit": "chief-of-staff" }
+  ]
+}

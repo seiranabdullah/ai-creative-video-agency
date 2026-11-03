@@ -1,0 +1,18 @@
+{
+  "name": "ai-creative-video-agency",
+  "version": "1.0.0",
+  "description": "AI Creative & Video Marketing Agency: 8 autonomous AI employees (ai-employees kits) with a Project Manager that logs to Google Sheets and emails a daily brief.",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "hire": "node setup/hire-team.mjs",
+    "check": "node setup/check-setup.mjs",
+    "team": "node src/run-agents.mjs",
+    "agent": "node src/run-agents.mjs",
+    "pm": "node src/project-manager.mjs",
+    "daily": "node src/run-agents.mjs && node src/project-manager.mjs",
+    "demo": "node src/run-agents.mjs --demo && node src/project-manager.mjs --demo"
+  },
+  "license": "MIT"
+}
