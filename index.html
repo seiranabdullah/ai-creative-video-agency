@@ -394,6 +394,12 @@ details.adv .field{margin-bottom:12px}
 .runinfo .limit{color:var(--green);font-weight:600}
 .proofgrid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .runinfo .limit.warnline{color:var(--amber)}
+.sendcard{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border:1.5px dashed #C9D1E5;box-shadow:none;background:#FCFDFF}
+.sendcard .sendtext{display:flex;align-items:center;gap:12px;flex:1;min-width:240px}
+.sendcard .sendtext b{display:block;font-size:15.5px}
+.sendcard .sendico{width:36px;height:36px;border-radius:50%;background:var(--soft);color:var(--navy2);display:grid;place-items:center;font-weight:800;font-size:18px;flex:none}
+.sendcard.ready{border:1.5px solid var(--accent);background:#FFF6EE;box-shadow:0 0 0 4px rgba(238,122,27,.12)}
+.sendcard.ready .sendico{background:var(--accent);color:#fff}
 </style>
 </head>
 <body>
@@ -484,7 +490,6 @@ details.adv .field{margin-bottom:12px}
     <div class="runbar">
       <button type="button" class="btn-primary" id="teamRun">Run the 8 agents live</button>
       <div class="runinfo"><b id="teamStatus">Showing the last real run from GitHub</b><span class="small" id="teamSub">Press the button to let Gemini create a new campaign now.</span><span class="small limit" id="teamLimit"></span></div>
-      <button type="button" class="btn" id="toReview" disabled>Send to the Review Board →</button>
     </div>
 
     <div class="teamgrid" id="teamGrid"></div>
@@ -498,6 +503,11 @@ details.adv .field{margin-bottom:12px}
         <div class="pipehead"><h2>Project Manager's daily brief</h2><span class="small" id="mailState"></span></div>
         <div class="md small-md" id="pmBrief"></div>
       </div>
+    </div>
+
+    <div class="card sendcard" id="sendCard">
+      <div class="sendtext"><span class="sendico" aria-hidden="true">→</span><div><b>Next: send the campaign to the Review Board</b><span class="small" id="sendSub">The 5 reviewers check the campaign part by part and give the decision.</span></div></div>
+      <button type="button" class="btn-primary" id="toReview" disabled>Send to the Review Board →</button>
     </div>
   </div>
 </section>
@@ -590,11 +600,10 @@ details.adv .field{margin-bottom:12px}
 <!-- ============================== 4. PROOF ============================== -->
 <section class="page" id="page-proof" data-title="Proof" hidden>
   <div class="wrap pagewrap">
-    <div class="pagehead"><div><div class="kicker dark">Step 4</div><h1>Proof and resources</h1><p class="small">Everything the agency uses is real and open: the ledger, the code and the recording.</p></div></div>
+    <div class="pagehead"><div><div class="kicker dark">Step 4</div><h1>Proof and resources</h1><p class="small">Everything the agency uses is real and open: the ledger, the code and the email bulletin.</p></div></div>
     <div class="proofgrid">
       <a class="card proof" id="pSheet" target="_blank" rel="noopener"><span class="pico sheet">▦</span><b>Google Sheet ledger</b><span>Every agent run and every Review Board decision: Timestamp, Agent Name, Task Performed, Output Status.</span><em>Open the ledger ↗</em></a>
       <a class="card proof" id="pRepo" target="_blank" rel="noopener"><span class="pico git">&lt;/&gt;</span><b>GitHub repository</b><span>The full source code of the agency: 8 agents, the Gemini bridge, the Google Sheets bridge and the Apps Script.</span><em>Open on GitHub ↗</em></a>
-      <a class="card proof" id="pVideo" target="_blank" rel="noopener"><span class="pico vid">▶</span><b>Screen recording</b><span>A short recording of a live run: the 8 agents, the Review Board, the ledger and the email bulletin.</span><em>Watch the video ↗</em></a>
       <div class="card proof static"><span class="pico mail">✉</span><b>Daily email bulletin</b><span>After every live run the Project Manager emails a status table and next steps. Put your address in <em>Connections</em> to receive it.</span><em>Arrives after a live run</em></div>
     </div>
 
@@ -1188,6 +1197,7 @@ npm run pm        # only the Project Manager</pre>
 
   const HEALTH = /\b(healthy|healthier|healthiest|health benefits?|good for (your )?(health|heart|body|brain)|cures?|heals?|detox\w*|weight loss|lose weight|burns? fat|fat burning|boosts? (your )?immun\w*|immune system|medical|medicine|vitamins?|prevents? (disease|illness|cancer))\b/gi;
 
+  const NEGATION = /\b(no|not|never|don't|do not|doesn't|does not|isn't|is not|avoid|avoiding|without|nor|zero|ban|banned|forbidden)\b|n't\b/i;
   function splitList(v) {
     return String(v || "").split(/,|;|\/|\band\b|\n/i).map((s) => s.replace(/^[-•*\s]+|[.\s]+$/g, "").trim()).filter((s) => s.length > 1);
   }
@@ -1213,6 +1223,18 @@ npm run pm        # only the Project Manager</pre>
       if (cur) cur.lines.push(t);
     }
     return out.map((c) => ({ title: c.title, text: c.lines.join("\n") }));
+  }
+  // end second of the first timed row of a script table, e.g. "| 0:00 - 0:02 | …" -> 2 (only if it starts at 0)
+  function firstRowEnds(text) {
+    for (const row of text.split("\n")) {
+      if (!/^\|/.test(row.trim())) continue;
+      const cell = (row.split("|")[1] || "").replace(/[*_`]/g, "");
+      let m = cell.match(/^\s*0?0:00\s*[-–]\s*(\d{1,2}):(\d{2})\b/);
+      if (m) return +m[1] * 60 + +m[2];
+      m = cell.match(/^\s*0\s*[-–]\s*(\d{1,2})\s*(?:s|sec|secs|seconds)?\s*$/i);
+      if (m) return +m[1];
+    }
+    return null;
   }
   function videoSeconds(v) {
     let m = v.title.match(/\((\d{1,3})\s*(?:s|sec|secs|seconds)\)/i) || v.text.match(/\b(?:length|duration|total|runtime)\s*[:\-–]?\s*(\d{1,3})\s*(?:s|sec|secs|seconds)\b/i);
@@ -1320,11 +1342,12 @@ npm run pm        # only the Project Manager</pre>
           : pass("Video length 15–30 s", lens.map((x) => x.sec + " s").join(", ") + ". All inside the rule."));
         const n = Math.max(vids.length, 1);
         const HOOK = /hook[^\n]{0,30}?(\(?\s*0\s*[-–]\s*[12](?:[.,]\d)?\s*(?:s|sec|secs|seconds)?\s*\)?|first\s+(?:2|two)\s+sec)|\bfirst\s+(?:2|two)\s+seconds\b/i;
-        const hooks = vids.length ? vids.filter((v) => HOOK.test(v.text)).length : (HOOK.test(scripts) ? 1 : 0);
+        const hasHook = (t) => HOOK.test(t) || (/\bhook\b/i.test(t) && firstRowEnds(t) != null && firstRowEnds(t) <= 2);
+        const hooks = vids.length ? vids.filter((v) => hasHook(v.text)).length : (hasHook(scripts) ? 1 : 0);
         out.push(hooks >= n ? pass("Hook in the first 2 seconds", plural(hooks, "hook") + " for " + plural(vids.length, "video") + ".")
           : hooks ? warn("Hook in the first 2 seconds", "Only " + hooks + " of " + vids.length + " videos have a hook in 0–2 s.")
           : fail("Hook in the first 2 seconds", "No hook in the first 2 seconds (e.g. “Hook (0–2 s): …”)."));
-        const CTA = /^(cta|call to action)\s*[:\-–]|\b(follow (us|@?[\p{L}]+ for)|tag (a|your)\b|try (it|[\p{Lu}][\p{L}]+)|grab (a|yours|your)\b|buy (now|it)|order (now|today)|shop now|link in (bio|the bio)|comment (below|your)|share (this|with)|save (this|for later)|visit|sign up|get yours|pick (one|it) up)/imu;
+        const CTA = /^[*_\s-]*(cta|call to action)[*_\s]*[:\-–]|\b(follow (us|for|now|along|@?[\p{L}]+ for)|tag (a|your)\b|try (it|[\p{Lu}][\p{L}]+)|grab (a|yours|your)\b|buy (now|it)|order (now|today)|shop now|link in (bio|the bio)|drop (a|your)\b|(in|to) the comments|comment (below|your|with)|let us know|tell us|share (this|with|it)|save (this|it|for later)|visit|sign up|get yours|pick (one|it) up)/imu;
         const ctas = vids.length ? vids.filter((v) => v.text.split("\n").some((l) => CTA.test(l.trim()) && !/^todo\b/i.test(l.trim()))).length
           : (scripts.split("\n").some((l) => CTA.test(l.trim())) ? 1 : 0);
         out.push(ctas >= n ? pass("Call to action", plural(ctas, "video") + " of " + vids.length + " ask the viewer to act (follow, tag, try…).")
@@ -1354,7 +1377,13 @@ npm run pm        # only the Project Manager</pre>
         const claims = [];
         let m;
         HEALTH.lastIndex = 0;
-        while ((m = HEALTH.exec(d.content))) claims.push(m[0]);
+        while ((m = HEALTH.exec(d.content))) {
+          const before = d.content.slice(0, m.index);
+          const start = Math.max(before.lastIndexOf("."), before.lastIndexOf("!"), before.lastIndexOf("?"), before.lastIndexOf("\n"));
+          const lead = before.slice(start + 1).trim().split(/\s+/).slice(-5).join(" ");
+          if (NEGATION.test(lead)) continue; // e.g. "never suggest health benefits" is a rule, not a claim
+          claims.push(m[0]);
+        }
         out.push(claims.length ? fail("No health claims", "Health claims found: " + [...new Set(claims.map((c) => c.toLowerCase()))].map((c) => "“" + c + "”").join(", ") + ". The client does not allow them.")
           : pass("No health claims", "No health or medical claims in the content."));
         const post = d.sections.posting;
@@ -1363,7 +1392,14 @@ npm run pm        # only the Project Manager</pre>
         else if (!plats.length) out.push(warn("Posting plan per platform", "No platforms in the brief to compare with."));
         else {
           const low = post.text.toLowerCase();
-          const miss = plats.filter((p) => low.indexOf(p.toLowerCase()) < 0);
+          const ALIAS = { instagram: ["instagram", "ig", "insta"], youtube: ["youtube", "yt"], tiktok: ["tiktok", "tik tok"], facebook: ["facebook", "fb"] };
+          const found = (p) => {
+            const full = p.toLowerCase();
+            if (low.indexOf(full) >= 0) return true;
+            const first = full.split(/\s+/)[0];
+            return (ALIAS[first] || (first.length >= 4 ? [first] : [])).some((a) => new RegExp("(^|[^\\p{L}])" + escRe(a) + "(?![\\p{L}])", "u").test(low));
+          };
+          const miss = plats.filter((p) => !found(p));
           out.push(!miss.length ? pass("Posting plan per platform", "Every platform has a plan: " + plats.join(", ") + ".") : fail("Posting plan per platform", "No posting plan for: " + miss.join(", ") + "."));
         }
         const plan = d.sections.plan ? d.sections.plan.text : "";
@@ -1742,7 +1778,7 @@ References
     copywriter: {
       task: "Wrote video scripts, hooks and captions", file: "03-scripts-and-captions.md", needs: ["marketing-coordinator"],
       gives: "Scripts for 2 videos, hooks, captions, hashtags",
-      prompt: (cfg, prev) => "You are the Copywriter in an AI marketing agency.\n" + brandBlock(cfg) + "\n\nCampaign plan from the Marketing Coordinator:\n" + cut(prev["marketing-coordinator"]) + "\n\nTask: write content for the first 2 videos of the calendar. For each video give:\n- Title\n- Hook (first 2 seconds)\n- Script as a table: Time | What we see | Voice-over / text on screen (15-30 seconds total)\n- Caption with 3-5 hashtags\nAlso give 3 extra hook ideas.\n" + STYLE
+      prompt: (cfg, prev) => "You are the Copywriter in an AI marketing agency.\n" + brandBlock(cfg) + "\n\nCampaign plan from the Marketing Coordinator:\n" + cut(prev["marketing-coordinator"]) + "\n\nTask: write content for the first 2 videos of the calendar. For each video give:\n- Title\n- Hook (first 2 seconds)\n- Script as a table: Time | What we see | Voice-over / text on screen (15-30 seconds total)\n- Caption with 3-5 hashtags\n- Call to action (CTA): one short line that asks viewers to act\nAlso give 3 extra hook ideas.\n" + STYLE
     },
     "graphic-designer": {
       task: "Created the design brief and AI image prompts", file: "04-design-brief.md", needs: ["copywriter"],
@@ -1757,7 +1793,7 @@ References
     "social-media-manager": {
       task: "Adapted posts per platform and drafted replies", file: "06-social-posting-and-replies.md", needs: ["copywriter", "marketing-coordinator"],
       gives: "Posting plan per platform, caption check, comment replies",
-      prompt: (cfg, prev) => "You are the Social Media Manager in an AI marketing agency.\n" + brandBlock(cfg) + "\n\nScripts and captions from the Copywriter:\n" + cut(prev.copywriter, 1800) + "\n\nTask:\n1. Posting plan for Video 1: a table with Platform | Best time | Caption version | Hashtags.\n2. Check each caption against the brand rules and say \"OK\" or what to fix.\n3. Here are 4 sample comments from followers. Sort each one (Question / Praise / Complaint / Spam) and draft a short, friendly reply:\n   a) \"Where can I buy this in Riga?\"\n   b) \"Too sweet for me :(\"\n   c) \"Love the can design!!\"\n   d) \"Check my profile for free followers\"\n" + STYLE
+      prompt: (cfg, prev) => "You are the Social Media Manager in an AI marketing agency.\n" + brandBlock(cfg) + "\n\nScripts and captions from the Copywriter:\n" + cut(prev.copywriter, 1800) + "\n\nTask:\n1. Posting plan for Video 1: a table with Platform | Best time | Caption version | Hashtags, with one row for every platform: " + cfg.client.platforms.join(", ") + ".\n2. Check each caption against the brand rules and say \"OK\" or what to fix.\n3. Here are 4 sample comments from followers. Sort each one (Question / Praise / Complaint / Spam) and draft a short, friendly reply:\n   a) \"Where can I buy this in Riga?\"\n   b) \"Too sweet for me :(\"\n   c) \"Love the can design!!\"\n   d) \"Check my profile for free followers\"\n" + STYLE
     },
     "sales-partnerships-manager": {
       task: "Built the influencer and partner outreach list", file: "07-partnerships-outreach.md", needs: ["market-researcher"],
@@ -2529,8 +2565,7 @@ References
   const SITE = {
     repoUrl: "https://github.com/seiranabdullah/ai-creative-video-agency",
     sheetUrl: "https://docs.google.com/spreadsheets/d/1kQIthVf84eAV-QY9xxGR8ejcgewBRdvRsMU3WhxDb8o/edit?usp=sharing",
-    webhookUrl: "https://script.google.com/macros/s/AKfycbwPmhCF2dOu09jOanV_hjS8QO2C032u8fJBptbgMKWyCGUpgwquuYGjeY_ogDTT_jiXRA/exec",
-    videoUrl: ""
+    webhookUrl: "https://script.google.com/macros/s/AKfycbwPmhCF2dOu09jOanV_hjS8QO2C032u8fJBptbgMKWyCGUpgwquuYGjeY_ogDTT_jiXRA/exec"
   };
   const real = (u) => (u && !/^\{\{/.test(u) ? u : "");
 
@@ -2822,7 +2857,7 @@ References
     $("pmBrief").innerHTML = mdToHtml(state.outputs["project-manager"]);
     $("mailState").textContent = "Emailed after the last real run";
     $("sheetState").textContent = "Last real run, logged in the Google Sheet";
-    $("toReview").disabled = false;
+    setSend(true, "The last real run is ready. The 5 reviewers check it part by part and give the decision.", false);
     $("loadTeamSub").textContent = "The last real run of the 8 agents (made with the old, non-measurable goal)";
     $("teamStatus").textContent = "Showing the last real run from GitHub";
     $("teamSub").textContent = "Real outputs of the agents' last run. It used the old goal, before the Review Board asked for a SMART goal. Press the button to create a new campaign now.";
@@ -2843,7 +2878,8 @@ References
     }
     const ask = (prompt, onModel) => key ? AI.generate(key, prompt, onModel) : (onModel && onModel("Gemini"), Bridge.gemini(runId, prompt, false));
     state.running = true; state.source = "live"; state.outputs = {}; state.meta = {}; state.cfg = cfg;
-    $("teamRun").disabled = true; $("toReview").disabled = true;
+    $("teamRun").disabled = true;
+    setSend(false, "Waiting: the button opens when all 8 agents have finished.", false);
     $("teamStatus").textContent = "The team is working… (about 1 minute)";
     $("teamSub").textContent = "Each agent gets the work of its teammates, writes its part with Gemini and logs a row in the Google Sheet.";
     ALL.forEach((id) => setCard(id, null, "Waiting", ""));
@@ -2879,7 +2915,8 @@ References
         $("teamSub").textContent = keyFailed + " Nothing was logged.";
         $("pmBrief").innerHTML = '<p class="placeholder">No brief: the run stopped before the agents could work.</p>';
         $("sheetState").textContent = "Nothing was sent to the Google Sheet";
-        $("teamRun").disabled = false; $("toReview").disabled = true;
+        $("teamRun").disabled = false;
+        setSend(false, "No campaign yet: run the agents again.", false);
         $("loadTeamSub").textContent = "No campaign yet: run the agents again";
         state.source = "none"; state.running = false;
         return;
@@ -2905,7 +2942,10 @@ References
     if (!keyFailed) {
       try {
         const r = await ask(A.pmPrompt(cfg, audit), (m) => { $("am-" + pmId).textContent = "Thinking with " + m + "…"; });
-        const lines = r.text.split("\n").map((l) => l.replace(/^[-*\d.\s]+/, "").trim()).filter(Boolean).slice(0, 3);
+        const lines = r.text.split("\n")
+          .filter((l) => !/^\s*#/.test(l))
+          .map((l) => l.replace(/^[\s>*_\-•\d.)]+/, "").replace(/\*\*/g, "").trim())
+          .filter((l) => l.length >= 8 && !/^next steps:?$/i.test(l)).slice(0, 3);
         if (lines.length) next = lines;
         pmModel = r.model;
       } catch (e) { /* default next steps */ }
@@ -2932,8 +2972,13 @@ References
     $("loadTeamSub").textContent = "The campaign from the live run";
     $("teamRun").disabled = false; $("teamRun").textContent = "Run the 8 agents again";
     refreshStatus();
-    $("toReview").disabled = false;
+    setSend(true, brief.failed ? "The run finished with " + brief.failed + " failed agent(s). You can still send it: the reviewers will flag the missing work." : "All 8 agents are done and logged. The campaign is ready for the 5 reviewers.", !brief.failed);
     state.running = false;
+  }
+  function setSend(on, text, ready) {
+    $("toReview").disabled = !on;
+    $("sendSub").textContent = text;
+    $("sendCard").classList.toggle("ready", !!ready);
   }
   function campaignText() {
     return A.buildCampaignDoc(state.cfg || readBrief(), state.outputs, E.looksLikeHeading);
@@ -2947,7 +2992,7 @@ References
   // ------------------------------------------------------------ proof
   function initProof() {
     const set = (id, url) => { const a = $(id); if (url) a.href = url; else a.remove(); };
-    set("pSheet", real(SITE.sheetUrl)); set("pRepo", SITE.repoUrl); set("pVideo", real(SITE.videoUrl));
+    set("pSheet", real(SITE.sheetUrl)); set("pRepo", SITE.repoUrl);
     const b = SITE.repoUrl + "/blob/main/";
     const rows = [
       ["Client brief and the team", "Client, brand rules, platforms and the 8 agents with their base kits", "agency.config.json"],
