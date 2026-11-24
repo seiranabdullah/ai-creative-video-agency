@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Review Board · AI Creative &amp; Video Marketing Agency</title>
+<title>AI Creative &amp; Video Marketing Agency</title>
+<meta name="description" content="An AI marketing agency: 8 AI employees create a campaign, 5 AI reviewers check it.">
 <style id="mainStyle">
 :root{
   --ink:#0E1A3A; --navy:#182B5C; --navy2:#22397A; --accent:#EE7A1B; --accent2:#D9650A;
@@ -202,7 +203,7 @@ details.settings>summary .ico{color:var(--navy2)}
 .how h2{font-size:18px;margin-bottom:6px}
 .flowline{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 14px;font-size:13.5px}
 .flowline span{background:var(--soft);padding:4px 10px;border-radius:999px;font-weight:600}
-.flowline .ok{background:var(--green-bg);color:var(--green)}
+.flowline .rule{background:#fff;border:1px dashed #B9C3DC;color:var(--muted);font-weight:600}
 .flowline .arrow{background:none;padding:0;color:var(--accent);font-weight:700}
 .howlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .howlist>li{border:1px solid var(--line);border-radius:12px;padding:12px;background:#FCFDFF}
@@ -227,115 +228,437 @@ footer{color:var(--muted);font-size:12.5px;text-align:center;padding:10px 0 30px
 @media (max-width:560px){.howlist{grid-template-columns:1fr}.rbody{padding-left:18px}.top h1{font-size:28px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media print{.top,.runbar,.settings,.grid2,.how,.afterrow,#pipelineCard{display:none!important} body{background:#fff}}
+/* ---------- site shell ---------- */
+.top{padding:0;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px rgba(14,26,58,.25)}
+.topbar{display:flex;align-items:center;gap:18px;min-height:64px;flex-wrap:nowrap!important;align-items:center!important}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;min-width:0}
+.brand b{display:block;font-size:14.5px;white-space:nowrap}
+.brand small{display:block;color:#AFC0EA;font-size:12px;white-space:nowrap}
+.logo{width:34px;height:34px;border-radius:9px;background:var(--accent);display:grid;place-items:center;font-weight:800;font-size:13px;letter-spacing:.02em;flex:none}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{color:#C9D3EE;text-decoration:none;font-weight:600;font-size:14px;padding:8px 12px;border-radius:9px;white-space:nowrap}
+.nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav a.on{background:#fff;color:var(--ink)}
+.connbtn{display:flex;align-items:center;gap:8px;font:inherit;font-size:13.5px;font-weight:600;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);padding:8px 12px;border-radius:9px;cursor:pointer;white-space:nowrap}
+.connbtn:hover{background:rgba(255,255,255,.18)}
+.dot{width:9px;height:9px;border-radius:50%;background:#F5B544;box-shadow:0 0 0 3px rgba(245,181,68,.25)}
+.dot.ok{background:#3DDC97;box-shadow:0 0 0 3px rgba(61,220,151,.25)}
+.page{padding-bottom:20px}
+.pagewrap{padding-top:24px}
+.pagehead{margin-bottom:16px}
+.pagehead h1{font-size:28px;margin:4px 0 6px}
+.pagehead p{margin:0;max-width:760px}
+.kicker.dark{color:var(--accent2)}
+.hero{background:linear-gradient(180deg,var(--navy),#22397A);color:#fff;padding:44px 0 50px;margin-bottom:22px}
+.hero h1{font-size:36px;max-width:860px;letter-spacing:-.01em;margin:8px 0 12px;line-height:1.15}
+.hero .lead{color:#D3DCF3;max-width:780px;font-size:16px;margin:0}
+.hero .kicker{color:#FFB16E}
+.herobtns{margin-top:22px}
+a.btn-primary,a.btn{text-decoration:none;display:inline-block}
+.btn.light{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3);padding:13px 20px;border-radius:12px;font-size:15px}
+.btn.light:hover{background:rgba(255,255,255,.2)}
+.btn-primary.small{font-size:14px;padding:10px 18px}
+.flow{display:flex;align-items:stretch;gap:8px}
+.fstep{flex:1 1 0;border:1.5px solid var(--line);border-radius:14px;padding:14px;background:#FCFDFF;display:flex;flex-direction:column;gap:4px;position:relative}
+.fstep.big{flex:1.6 1 0}
+.fstep b{font-size:15px}
+.fstep span{font-size:13px;color:var(--muted)}
+.fstep.decision{background:var(--green-bg);border-color:#9BD3BB}
+.fnum{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px;margin-bottom:4px}
+.farrow{display:grid;place-items:center;color:var(--accent);font-weight:800;font-size:20px}
+.minis{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.minis i{font-style:normal;font-size:11.5px;font-weight:600;background:var(--soft);color:var(--navy2);padding:2px 8px;border-radius:999px}
+.minis i.pm{background:#FFF1E4;color:var(--accent2)}
+.bridges{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.bridges div{background:var(--soft);border-radius:12px;padding:10px 14px;font-size:13px}
+.bridges b{display:block;font-size:13.5px}
+.bridges span{color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+.grid3 .card{margin:0}
+.stat .snum{font-size:40px;font-weight:800;color:var(--accent2);line-height:1}
+.stat b{display:block;margin:6px 0 2px;font-size:15.5px}
+.stat span{font-size:13.5px;color:var(--muted)}
+.steps4{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;counter-reset:s}
+.steps4 li{counter-increment:s;border:1px solid var(--line);border-radius:12px;padding:12px 12px 12px 48px;position:relative;background:#FCFDFF}
+.steps4 li::before{content:counter(s);position:absolute;left:12px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+.steps4 b{display:block}
+.steps4 span{font-size:13px;color:var(--muted)}
+/* ---------- brief ---------- */
+details.brief>summary{display:flex;align-items:center;gap:12px;cursor:pointer;list-style:none}
+details.brief>summary::-webkit-details-marker{display:none}
+details.brief .bt{flex:1;min-width:0}
+details.brief .bt b{display:block}
+details.brief .bt small{color:var(--muted);font-size:13px}
+details.brief .edithint::after{content:" ▾"}
+details.brief[open] .edithint::after{content:" ▴"}
+.briefgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;margin:16px 0 8px}
+.briefgrid .wide{grid-column:1/-1}
+.field textarea{width:100%;font:inherit;font-size:14px;padding:9px 11px;border-radius:10px;border:1px solid var(--line);resize:vertical;margin:0;min-height:0;background:#fff;color:var(--ink)}
+.field input[type=email]{width:100%;font:inherit;font-size:14px;padding:9px 11px;border-radius:10px;border:1px solid var(--line)}
+.runinfo{display:flex;flex-direction:column;flex:1;min-width:220px}
+.runinfo b{font-size:15px}
+/* ---------- team ---------- */
+.teamgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.acard{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:6px;box-shadow:var(--shadow);transition:border-color .25s,background .25s,box-shadow .25s}
+.acard .ahead{display:flex;align-items:center;gap:10px}
+.acard .anum{width:30px;height:30px;border-radius:50%;background:var(--soft);color:var(--navy2);display:grid;place-items:center;font-weight:800;font-size:13px;flex:none}
+.acard .an{font-weight:700;font-size:14.5px;line-height:1.2}
+.acard .kit{font-size:11.5px;color:var(--muted)}
+.acard .task{font-size:13px;margin:0}
+.acard .from{font-size:12px;color:var(--muted);margin:0}
+.acard .afoot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:6px}
+.acard .model{font-size:11.5px;color:var(--muted)}
+.acard .open{font:inherit;font-size:12.5px;font-weight:600;color:var(--navy2);background:var(--soft);border:0;border-radius:8px;padding:5px 10px;cursor:pointer}
+.acard .open:hover{background:#E1E8F8}
+.acard .open:disabled{opacity:.45;cursor:default}
+.acard.pm{border-color:#F6C9A0;background:#FFFBF6}
+.acard.pm .anum{background:#FFF1E4;color:var(--accent2)}
+.acard.running{border-color:var(--accent);box-shadow:0 0 0 4px rgba(238,122,27,.15);animation:pulse 1s ease-in-out infinite}
+.acard.done{border-color:#9BD3BB}
+.acard.done .anum{background:var(--green-bg);color:var(--green)}
+.acard.failed{border-color:#EDB3AD;background:#FEF8F7}
+.acard.failed .anum{background:var(--red-bg);color:var(--red)}
+.pill.done{background:var(--green);color:#fff}
+.pill.failed{background:var(--red);color:#fff}
+.pill.archived{background:var(--info-bg);color:var(--info)}
+.grid2b{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:18px;margin-bottom:18px}
+.grid2b .card{margin:0}
+.tablewrap{overflow-x:auto}
+table.log{width:100%;border-collapse:collapse;font-size:13px}
+table.log th{text-align:left;background:var(--soft);padding:7px 9px;font-size:12.5px;white-space:nowrap}
+table.log td{padding:7px 9px;border-top:1px solid var(--line);vertical-align:top}
+table.log td.st{font-weight:700;white-space:nowrap}
+table.log td.st.ok{color:var(--green)} table.log td.st.bad{color:var(--red)}
+table.log td.sh{white-space:nowrap;color:var(--muted)}
+table.log td.sh.ok{color:var(--green);font-weight:700}
+table.log.code td:last-child a{font-family:Consolas,Menlo,monospace;font-size:12.5px}
+.emptyrow td{color:var(--muted);text-align:center;padding:16px}
+/* ---------- markdown ---------- */
+.md{font-size:14px;line-height:1.55}
+.md h1,.md h2,.md h3,.md h4{margin:14px 0 6px;line-height:1.25}
+.md h1{font-size:20px}.md h2{font-size:17px}.md h3{font-size:15.5px}.md h4{font-size:14.5px}
+.md>:first-child{margin-top:0}
+.md p{margin:6px 0}
+.md ul,.md ol{margin:6px 0;padding-left:22px}
+.md table{border-collapse:collapse;width:100%;margin:8px 0;font-size:13px;display:block;overflow-x:auto}
+.md th,.md td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+.md th{background:var(--soft)}
+.md pre{background:#0E1A3A;color:#E6ECFA;padding:10px 12px;border-radius:10px;overflow-x:auto;font-size:12.5px;white-space:pre-wrap}
+.md code{font-family:Consolas,Menlo,monospace;font-size:12.5px;background:var(--soft);padding:1px 5px;border-radius:5px}
+.md pre code{background:none;padding:0;color:inherit}
+.md hr{border:0;border-top:1px solid var(--line);margin:12px 0}
+.small-md{font-size:13px}
+.small-md table{font-size:12px}
+.placeholder{color:var(--muted);font-size:13.5px}
+/* ---------- proof ---------- */
+.proofgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.card.proof{margin:0;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+a.card.proof:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card.proof b{font-size:15.5px}
+.card.proof span{font-size:13.5px;color:var(--muted)}
+.card.proof em{font-style:normal;font-weight:700;color:var(--accent2);font-size:13.5px;margin-top:auto}
+.card.proof.missing{opacity:.6;pointer-events:none}
+.card.proof.missing em::after{content:" (link not added yet)"}
+.pico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-weight:800;font-size:16px;color:#fff}
+.pico.sheet{background:#0F9D58}.pico.git{background:#24292F;font-size:13px}.pico.vid{background:#D93025}.pico.mail{background:var(--navy2)}
+.tech{margin:0;padding-left:18px;font-size:14px}
+.tech li{margin:5px 0}
+pre.cmd{background:#0E1A3A;color:#E6ECFA;border-radius:12px;padding:12px 14px;font-size:13px;margin:0;overflow-x:auto}
+/* ---------- dialogs ---------- */
+dialog{border:0;border-radius:16px;padding:0;box-shadow:0 20px 60px rgba(14,26,58,.35);max-width:560px;width:calc(100% - 32px);color:var(--ink)}
+dialog#outDialog{max-width:860px}
+dialog::backdrop{background:rgba(14,26,58,.45)}
+.dlg{padding:20px 22px;display:grid;gap:14px;max-height:85vh;overflow:auto}
+.dlghead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.dlghead h2{font-size:19px}
+.x{font:inherit;font-size:16px;background:var(--soft);border:0;width:34px;height:34px;border-radius:50%;cursor:pointer;flex:none}
+.row.nowrap{flex-wrap:nowrap}
+.row.nowrap input{flex:1}
+.row.end{justify-content:flex-end}
+.check.sel{align-items:center}
+.check.sel select{font:inherit;font-size:13px;padding:4px 6px;border-radius:8px;border:1px solid var(--line)}
+.teambtn{display:flex;align-items:center;gap:12px;width:100%;text-align:left;margin-bottom:10px;padding:12px 14px;border:1.5px solid #F6C9A0;background:#FFF6EE}
+.teambtn:hover{background:#FFEEDD;border-color:var(--accent)}
+.teambtn .ico{width:26px;height:26px;color:var(--accent2)}
+.teambtn b{display:block}
+.teambtn small{display:block;color:var(--muted);font-weight:500;font-size:12.5px}
+@media (max-width:1100px){.teamgrid{grid-template-columns:repeat(2,1fr)}.proofgrid{grid-template-columns:1fr 1fr}.steps4{grid-template-columns:1fr 1fr}.nav a{padding:8px 9px}.brand small{display:none}}
+@media (max-width:860px){.topbar{flex-wrap:wrap!important;padding:8px 20px}.nav{order:3;width:100%;margin:0;overflow-x:auto}.flow{flex-direction:column}.farrow{transform:rotate(90deg)}.bridges,.grid3,.grid2b,.briefgrid{grid-template-columns:minmax(0,1fr)}.hero h1{font-size:28px}}
+@media (max-width:560px){.teamgrid,.proofgrid,.steps4{grid-template-columns:1fr}}
+#results,.rev,.page{scroll-margin-top:84px}
+@media (max-width:560px){details.brief .edithint{display:none}.connbtn{margin-left:auto}}
+.connnote{margin:0;background:var(--green-bg);color:var(--green);padding:10px 12px;border-radius:10px;font-size:13.5px;font-weight:600}
+details.adv>summary{cursor:pointer;font-weight:600;font-size:13.5px;color:var(--muted)}
+details.adv[open]>summary{margin-bottom:10px}
+details.adv .field{margin-bottom:12px}
+.runinfo .limit{color:var(--green);font-weight:600}
+.proofgrid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.runinfo .limit.warnline{color:var(--amber)}
 </style>
 </head>
 <body>
 <header class="top">
-  <div class="wrap">
-    <div>
-      <div class="kicker">AI Creative &amp; Video Marketing Agency</div>
-      <h1>Review Board</h1>
-      <p>Five AI employees check a document. Each one checks only its own part and answers YES or NO. If all five say YES, the <span id="thingWord">campaign</span> can be implemented.</p>
-    </div>
-    <div class="tags"><span class="tag">Runs in the browser</span><span class="tag">Nothing to install</span><span class="tag">5 reviewer agents</span></div>
+  <div class="wrap topbar">
+    <a class="brand" href="#overview"><span class="logo">AI</span><span><b>AI Creative &amp; Video Marketing Agency</b><small>8 AI employees create · 5 AI employees check</small></span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#overview" data-page="overview">Overview</a>
+      <a href="#team" data-page="team">Creative Team</a>
+      <a href="#review" data-page="review">Review Board</a>
+      <a href="#proof" data-page="proof">Proof</a>
+    </nav>
+    <button type="button" class="connbtn" id="openConn"><span class="dot" id="connDot"></span>Connections</button>
   </div>
 </header>
 
-<main class="wrap">
-  <div class="grid2">
-    <section class="card">
-      <div class="stephead"><span class="num">1</span><h2>What should the team check?</h2></div>
-      <div class="seg">
-        <button type="button" class="segbtn" data-mode="marketing" aria-pressed="true">
-          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5v14M17 5v14M3 9h4M3 15h4M17 9h4M17 15h4"/></svg>
-          <span><b>Marketing campaign</b><small>A campaign made by the agency's 8-agent team</small></span>
-        </button>
-        <button type="button" class="segbtn" data-mode="thesis" aria-pressed="false">
-          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M8 7h7"/></svg>
-          <span><b>Master thesis</b><small>Checked by the supervisor's thesis guidance</small></span>
-        </button>
+<!-- ============================== 1. OVERVIEW ============================== -->
+<section class="page" id="page-overview" data-title="Overview">
+  <div class="hero">
+    <div class="wrap">
+      <div class="kicker">Mini project · Multi-agent AI system</div>
+      <h1>An AI marketing agency that creates a campaign and checks it before anything goes out.</h1>
+      <p class="lead">Eight AI employees research, plan, write, design, edit and post a short-video campaign for a client. Five AI reviewers then check the work part by part. If all five say YES, the campaign is approved. Every step is logged in a Google Sheet and the Project Manager emails a daily bulletin.</p>
+      <div class="row herobtns">
+        <a class="btn-primary" href="#team">Run the agency live</a>
+        <a class="btn light" href="#review">Open the Review Board</a>
+        <a class="btn light" href="#proof">See the proof</a>
       </div>
-      <p class="hint" id="modeHint"></p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="card">
+      <div class="pipehead"><h2>How the whole system works</h2><span class="small">One run, start to finish</span></div>
+      <div class="flow">
+        <div class="fstep"><div class="fnum">1</div><b>Client brief</b><span>Brand, product, audience, SMART goal, platforms and brand rules.</span></div>
+        <div class="farrow" aria-hidden="true">→</div>
+        <div class="fstep big"><div class="fnum">2</div><b>Creative Team · 8 agents</b><span>7 specialists create the campaign and pass work to each other. The Project Manager audits them.</span><div class="minis"><i>Researcher</i><i>Coordinator</i><i>Copywriter</i><i>Designer</i><i>Video Editor</i><i>Social Media</i><i>Partnerships</i><i class="pm">Project Manager</i></div></div>
+        <div class="farrow" aria-hidden="true">→</div>
+        <div class="fstep big"><div class="fnum">3</div><b>Review Board · 5 agents</b><span>Each reviewer checks one part of the campaign and answers YES or NO.</span><div class="minis"><i>Brief</i><i>Content</i><i>Creative</i><i>Compliance</i><i>Final Approver</i></div></div>
+        <div class="farrow" aria-hidden="true">→</div>
+        <div class="fstep decision"><div class="fnum">4</div><b>Decision</b><span>All 5 YES → implement. Any NO → back with a list of fixes.</span></div>
+      </div>
+      <div class="bridges">
+        <div><b>Bridge 1 · AI brain</b><span>Google Gemini API writes every agent's work.</span></div>
+        <div><b>Bridge 2 · Google Sheet ledger</b><span>Every agent adds a row: Timestamp, Agent, Task, Status.</span></div>
+        <div><b>Bridge 3 · Email bulletin</b><span>The Project Manager emails the daily status report.</span></div>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="card stat"><div class="snum">8</div><b>Creative agents</b><span>Built on the open-source ai-employees kits, with clear roles and hand-offs.</span></div>
+      <div class="card stat"><div class="snum">5</div><b>Reviewer agents</b><span>More than 25 fixed rules for a campaign; a separate mode checks a master thesis.</span></div>
+      <div class="card stat"><div class="snum">0</div><b>Things to install</b><span>Everything runs in the browser. The same agents also run from GitHub with Node.js.</span></div>
+    </div>
+
+    <div class="card">
+      <h2 style="font-size:18px;margin-bottom:12px">Try it yourself in 4 steps</h2>
+      <ol class="steps4">
+        <li><b>Open the team</b><span>Go to <em>Creative Team</em>. Nothing to set up: the AI key is kept safely in the agency's Google bridge.</span></li>
+        <li><b>Run the team</b><span>Check the client brief (or change it) and press <em>Run the 8 agents live</em>. It takes about 1–2 minutes.</span></li>
+        <li><b>Review</b><span>Press <em>Send to the Review Board</em>. The 5 reviewers check the new campaign and give the decision.</span></li>
+        <li><b>Check the proof</b><span>Open the Google Sheet ledger on the <em>Proof</em> page. New rows appear, and the bulletin arrives by email.</span></li>
+      </ol>
+      <p class="small" style="margin:12px 0 0">Up to 20 live runs a day. The Creative Team page also shows the last real run of the 8 agents, and the Review Board works without AI too.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 2. CREATIVE TEAM ============================== -->
+<section class="page" id="page-team" data-title="Creative Team" hidden>
+  <div class="wrap pagewrap">
+    <div class="pagehead"><div><div class="kicker dark">Step 2</div><h1>Creative Team · 8 AI employees</h1><p class="small">Seven specialists create the campaign and pass their work to each other. The Project Manager audits the team, logs the ledger and emails the bulletin.</p></div></div>
+
+    <details class="card brief" id="briefCard">
+      <summary><span class="num">1</span><span class="bt"><b>Client brief</b><small id="briefSummary">NovaBrew Coffee · NovaBrew Cold Brew</small></span><span class="small edithint">Edit to make a campaign for any client</span></summary>
+      <div class="briefgrid">
+        <div class="field"><label class="l" for="bBrand">Client brand</label><input type="text" id="bBrand"></div>
+        <div class="field"><label class="l" for="bProduct">Product</label><input type="text" id="bProduct"></div>
+        <div class="field"><label class="l" for="bAudience">Target audience</label><input type="text" id="bAudience"></div>
+        <div class="field"><label class="l" for="bTone">Tone of voice</label><input type="text" id="bTone"></div>
+        <div class="field wide"><label class="l" for="bGoal">Campaign goal (SMART: a number and a time frame)</label><input type="text" id="bGoal"></div>
+        <div class="field wide"><label class="l" for="bPlatforms">Platforms (comma separated)</label><input type="text" id="bPlatforms"></div>
+        <div class="field wide"><label class="l" for="bRules">Brand rules (one per line)</label><textarea id="bRules" rows="4"></textarea></div>
+      </div>
+      <div class="row"><button type="button" class="btn ghost" id="briefReset">Reset to the NovaBrew example</button></div>
+    </details>
+
+    <div class="runbar">
+      <button type="button" class="btn-primary" id="teamRun">Run the 8 agents live</button>
+      <div class="runinfo"><b id="teamStatus">Showing the last real run from GitHub</b><span class="small" id="teamSub">Press the button to let Gemini create a new campaign now.</span><span class="small limit" id="teamLimit"></span></div>
+      <button type="button" class="btn" id="toReview" disabled>Send to the Review Board →</button>
+    </div>
+
+    <div class="teamgrid" id="teamGrid"></div>
+
+    <div class="grid2b">
+      <div class="card">
+        <div class="pipehead"><h2>Run log</h2><span class="small" id="sheetState">Same columns as the Google Sheet ledger</span></div>
+        <div class="tablewrap"><table class="log"><thead><tr><th>Time</th><th>Agent</th><th>Task performed</th><th>Output status</th><th>Sheet</th></tr></thead><tbody id="logBody"></tbody></table></div>
+      </div>
+      <div class="card">
+        <div class="pipehead"><h2>Project Manager's daily brief</h2><span class="small" id="mailState"></span></div>
+        <div class="md small-md" id="pmBrief"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 3. REVIEW BOARD ============================== -->
+<section class="page" id="page-review" data-title="Review Board" hidden>
+  <div class="wrap pagewrap">
+    <div class="pagehead"><div><div class="kicker dark">Step 3</div><h1>Review Board · 5 AI reviewers</h1><p class="small">Five AI employees check a document. Each one checks only its own part and answers YES or NO. If all five say YES, the <span id="thingWord">campaign</span> can be implemented.</p></div></div>
+    <div class="grid2">
+      <section class="card">
+        <div class="stephead"><span class="num">1</span><h2>What should the team check?</h2></div>
+        <div class="seg">
+          <button type="button" class="segbtn" data-mode="marketing" aria-pressed="true">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5v14M17 5v14M3 9h4M3 15h4M17 9h4M17 15h4"/></svg>
+            <span><b>Marketing campaign</b><small>A campaign made by the agency's 8-agent team</small></span>
+          </button>
+          <button type="button" class="segbtn" data-mode="thesis" aria-pressed="false">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M8 7h7"/></svg>
+            <span><b>Master thesis</b><small>Checked by the supervisor's thesis guidance</small></span>
+          </button>
+        </div>
+        <p class="hint" id="modeHint"></p>
+      </section>
+
+      <section class="card">
+        <div class="stephead"><span class="num">2</span><h2>Add the document</h2></div>
+        <button type="button" class="btn teambtn" id="loadTeam"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c.3-2.6 1.6-4.5 4-4.5 2 0 3 1.4 3 4.5"/></svg><span><b>Check our team's campaign</b><small id="loadTeamSub">The last real run of the 8 agents</small></span></button>
+        <div class="drop" id="drop">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v4h16v-4"/></svg>
+          <p><label for="fileInput">Choose a file</label> or drag it here. Word (.docx), PDF, .txt or .md.</p>
+          <input type="file" id="fileInput" accept=".docx,.pdf,.txt,.md,.markdown,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        </div>
+        <div class="row" style="margin-top:10px">
+          <button type="button" class="btn" id="sampleGood">Load a good sample</button>
+          <button type="button" class="btn" id="sampleBad">Load a sample with mistakes</button>
+          <button type="button" class="btn ghost" id="clearDoc">Clear</button>
+        </div>
+        <div class="filemsg" id="fileMsg" hidden></div>
+        <textarea id="docText" spellcheck="false" aria-label="Document text" placeholder="…or paste the document text here. Use clear headings, for example “1. Market Research” or “Chapter 1. Introduction”, and labels such as “Goal: …” or “Aim: …”."></textarea>
+        <div class="docinfo" id="docInfo" hidden></div>
+      </section>
+    </div>
+
+    <div class="runbar">
+      <button type="button" class="btn-primary" id="runBtn">Start review</button>
+      <div class="opts">
+        <label class="check"><input type="checkbox" id="optStrict"> Strict chain: stop at the first NO</label>
+        <label class="check"><input type="checkbox" id="optFast"> Fast mode (no animation)</label>
+        <label class="check"><input type="checkbox" id="optLog" checked> Log the decision to the Google Sheet</label>
+        <label class="check sel">Gemini second opinion:
+          <select id="optAiRole">
+            <option value="off">Off</option>
+            <option value="advisor">Advisor (comments only)</option>
+            <option value="voter">Voter (its NO also counts)</option>
+          </select>
+        </label>
+      </div>
+      <span id="runNote" role="status"></span>
+    </div>
+
+    <section class="card" id="pipelineCard">
+      <div class="pipehead"><h2>The reviewers at work</h2><span class="small">Document → 5 reviewers → decision</span></div>
+      <div class="pipeline" id="pipeline" aria-live="polite"></div>
     </section>
 
-    <section class="card">
-      <div class="stephead"><span class="num">2</span><h2>Add the document</h2></div>
-      <div class="drop" id="drop">
-        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v4h16v-4"/></svg>
-        <p><label for="fileInput">Choose a file</label> or drag it here. Word (.docx), PDF, .txt or .md.</p>
-        <input type="file" id="fileInput" accept=".docx,.pdf,.txt,.md,.markdown,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+    <section id="results" hidden>
+      <div id="verdict"></div>
+      <div class="listhead"><p class="small">Click a reviewer to see every check it made.</p><button type="button" class="btn" id="openAll">Open all</button></div>
+      <div id="reviewerList"></div>
+      <div class="row afterrow">
+        <button type="button" class="btn" id="dlBtn">Download report (.html)</button>
+        <button type="button" class="btn" id="copyBtn">Copy as text</button>
+        <button type="button" class="btn ghost" id="againBtn">Back to the top</button>
       </div>
-      <div class="row" style="margin-top:10px">
-        <button type="button" class="btn" id="sampleGood">Load a good sample</button>
-        <button type="button" class="btn" id="sampleBad">Load a sample with mistakes</button>
-        <button type="button" class="btn ghost" id="clearDoc">Clear</button>
+    </section>
+
+    <section class="card how" style="margin-top:18px">
+      <h2>How the Review Board works</h2>
+      <div class="flowline"><span>Document</span><span class="arrow">→</span><span>1</span><span class="arrow">→</span><span>2</span><span class="arrow">→</span><span>3</span><span class="arrow">→</span><span>4</span><span class="arrow">→</span><span>5</span><span class="arrow">→</span><span class="rule">Rule: all 5 YES → implement · any NO → return for fixes</span></div>
+      <p class="small" style="margin:0 0 14px">Each reviewer reads only its own part of the document and runs fixed, clear rules. Every rule gives ✓ passed, ! warning, ✕ failed or i info. One failed rule means that reviewer says NO, and the document goes back to the author with a list of fixes. Warnings do not stop the work.</p>
+      <div id="howAgents"></div>
+      <div class="extras">
+        <div><b>Human or AI?</b> The second reviewer measures the writing style: typical AI phrases, very even sentence rhythm, long words and em dashes give a score from 0 to 100. For a campaign it checks that the copy does not sound like generic AI; for a thesis it hints if the text may be AI-written. It is a hint for a person, not proof.</div>
+        <div><b>Part of the agency.</b> The 8-agent Creative Team creates the campaign, the Review Board checks it, and the decision is logged in the same Google Sheet ledger.</div>
       </div>
-      <div class="filemsg" id="fileMsg" hidden></div>
-      <textarea id="docText" spellcheck="false" aria-label="Document text" placeholder="…or paste the document text here. Use clear headings, for example “1. Market Research” or “Chapter 1. Introduction”, and labels such as “Goal: …” or “Aim: …”."></textarea>
-      <div class="docinfo" id="docInfo" hidden></div>
     </section>
   </div>
+</section>
 
-  <details class="card settings" style="margin-top:18px">
-    <summary><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>Optional: Gemini second opinion and Google Sheet ledger</summary>
-    <div class="setgrid">
-      <div class="field">
-        <label class="l" for="optKey">Gemini API key</label>
-        <div class="row"><input type="password" id="optKey" autocomplete="off" placeholder="Leave empty to use the rules only"><button type="button" class="btn" id="toggleKey">Show</button></div>
-        <label class="check"><input type="checkbox" id="optRemember"> Remember the key in this browser</label>
-        <label class="l" for="optAiRole" style="margin-top:12px">Gemini's role</label>
-        <select id="optAiRole">
-          <option value="advisor">Advisor: adds comments, the rules decide</option>
-          <option value="voter">Voter: a NO from Gemini also counts</option>
-        </select>
-        <p>With a key, each employee also asks Google Gemini for a short second opinion. The document text is sent to Google only when a key is set. Never put the key in GitHub.</p>
+<!-- ============================== 4. PROOF ============================== -->
+<section class="page" id="page-proof" data-title="Proof" hidden>
+  <div class="wrap pagewrap">
+    <div class="pagehead"><div><div class="kicker dark">Step 4</div><h1>Proof and resources</h1><p class="small">Everything the agency uses is real and open: the ledger, the code and the recording.</p></div></div>
+    <div class="proofgrid">
+      <a class="card proof" id="pSheet" target="_blank" rel="noopener"><span class="pico sheet">▦</span><b>Google Sheet ledger</b><span>Every agent run and every Review Board decision: Timestamp, Agent Name, Task Performed, Output Status.</span><em>Open the ledger ↗</em></a>
+      <a class="card proof" id="pRepo" target="_blank" rel="noopener"><span class="pico git">&lt;/&gt;</span><b>GitHub repository</b><span>The full source code of the agency: 8 agents, the Gemini bridge, the Google Sheets bridge and the Apps Script.</span><em>Open on GitHub ↗</em></a>
+      <a class="card proof" id="pVideo" target="_blank" rel="noopener"><span class="pico vid">▶</span><b>Screen recording</b><span>A short recording of a live run: the 8 agents, the Review Board, the ledger and the email bulletin.</span><em>Watch the video ↗</em></a>
+      <div class="card proof static"><span class="pico mail">✉</span><b>Daily email bulletin</b><span>After every live run the Project Manager emails a status table and next steps. Put your address in <em>Connections</em> to receive it.</span><em>Arrives after a live run</em></div>
+    </div>
+
+    <div class="card">
+      <h2 style="font-size:18px;margin-bottom:10px">Source code of each part</h2>
+      <div class="tablewrap"><table class="log code"><thead><tr><th>Part</th><th>What it does</th><th>File</th></tr></thead><tbody id="codeRows"></tbody></table></div>
+    </div>
+
+    <div class="grid2b">
+      <div class="card">
+        <h2 style="font-size:18px;margin-bottom:10px">Technology</h2>
+        <ul class="tech">
+          <li><b>Google Gemini API</b> (free tier): the AI brain of all agents.</li>
+          <li><b>Google Apps Script</b>: the bridge that writes the Google Sheet, sends Gmail and calls Gemini with the hidden key.</li>
+          <li><b>ai-employees</b> open-source kits: the role, contract and guardrails of each agent.</li>
+          <li><b>JavaScript</b>: Node.js on a computer, the same logic in this website.</li>
+          <li><b>GitHub Pages</b>: hosts this website, nothing to install.</li>
+        </ul>
       </div>
-      <div class="field">
-        <label class="l" for="optSheet">Google Sheet ledger (Apps Script web app URL)</label>
-        <input type="url" id="optSheet" placeholder="https://script.google.com/macros/s/…/exec">
-        <label class="check"><input type="checkbox" id="optLog"> Log every review to the ledger</label>
-        <p>The same Apps Script bridge as the agency's 8-agent team. Each employee adds one row (Timestamp, Agent Name, Task Performed, Output Status), and the Project Manager adds the final decision.</p>
+      <div class="card">
+        <h2 style="font-size:18px;margin-bottom:10px">Run it on a computer (Node.js)</h2>
+        <pre class="cmd">npm run hire      # hire the 8 AI employees
+npm run check     # check the key and the bridges
+npm run daily     # 7 agents + Project Manager
+npm run pm        # only the Project Manager</pre>
+        <p class="small" style="margin:8px 0 0">Guardrail of all agents: drafts only. Nothing is posted, sent to customers or paid without a human click.</p>
       </div>
     </div>
-  </details>
-
-  <div class="runbar">
-    <button type="button" class="btn-primary" id="runBtn">Start review</button>
-    <div class="opts">
-      <label class="check"><input type="checkbox" id="optStrict"> Strict chain: stop at the first NO</label>
-      <label class="check"><input type="checkbox" id="optFast"> Fast mode (no animation)</label>
-    </div>
-    <span id="runNote" role="status"></span>
   </div>
+</section>
 
-  <section class="card" id="pipelineCard">
-    <div class="pipehead"><h2>The team at work</h2><span class="small">Document → 5 employees → decision</span></div>
-    <div class="pipeline" id="pipeline" aria-live="polite"></div>
-  </section>
-
-  <section id="results" hidden>
-    <div id="verdict"></div>
-    <div class="listhead"><p class="small">Click an employee to see every check it made.</p><button type="button" class="btn" id="openAll">Open all</button></div>
-    <div id="reviewerList"></div>
-    <div class="row afterrow">
-      <button type="button" class="btn" id="dlBtn">Download report (.html)</button>
-      <button type="button" class="btn" id="copyBtn">Copy as text</button>
-      <button type="button" class="btn ghost" id="againBtn">Back to the top</button>
+<!-- ============================== CONNECTIONS ============================== -->
+<dialog id="connDialog" aria-labelledby="connTitle">
+  <form method="dialog" class="dlg">
+    <div class="dlghead"><h2 id="connTitle">Connections</h2><button type="submit" class="x" aria-label="Close">✕</button></div>
+    <p class="connnote">Nothing to set up. The agents use Gemini through the agency's Google bridge, where the AI key is stored safely and hidden.</p>
+    <div class="row"><button type="button" class="btn" id="testBridge">Check the connection</button><span class="small" id="bridgeMsg"></span></div>
+    <div class="field"><label class="l" for="cfgEmail">Send the daily bulletin to (optional email)</label>
+      <input type="email" id="cfgEmail" placeholder="Empty = the agency owner's inbox">
+      <p>After a live run the Project Manager emails the status bulletin to this address.</p>
     </div>
-  </section>
+    <details class="adv"><summary>Advanced</summary>
+      <div class="field"><label class="l" for="cfgWebhook">Google bridge (Apps Script web app URL)</label>
+        <input type="url" id="cfgWebhook" placeholder="https://script.google.com/macros/s/…/exec">
+        <p>Already set for the agency's ledger. Every agent adds its row here, and the Project Manager sends the email through it.</p>
+      </div>
+      <div class="field"><label class="l" for="cfgKey">Own Gemini API key (not needed)</label>
+        <div class="row nowrap"><input type="password" id="cfgKey" autocomplete="off" placeholder="Leave empty to use the agency's bridge"><button type="button" class="btn" id="toggleKey">Show</button></div>
+        <label class="check"><input type="checkbox" id="cfgRemember"> Remember the key in this browser</label>
+        <p>Only if you want to use your own key instead of the bridge. It stays in this browser and goes only to Google.</p>
+      </div>
+    </details>
+    <div class="row end"><button type="submit" class="btn-primary small">Save and close</button></div>
+  </form>
+</dialog>
 
-  <section class="card how" style="margin-top:18px">
-    <h2>How the Review Board works</h2>
-    <div class="flowline"><span>Document</span><span class="arrow">→</span><span>1</span><span class="arrow">→</span><span>2</span><span class="arrow">→</span><span>3</span><span class="arrow">→</span><span>4</span><span class="arrow">→</span><span>5</span><span class="arrow">→</span><span class="ok">All YES = implement</span></div>
-    <p class="small" style="margin:0 0 14px">Each employee reads only its own part of the document and runs fixed, clear rules. Every rule gives ✓ passed, ! warning, ✕ failed or i info. One failed rule means that employee says NO, and the document goes back to the author with a list of fixes. Warnings do not stop the work.</p>
-    <div id="howAgents"></div>
-    <div class="extras">
-      <div><b>Human or AI?</b> The second employee measures the writing style: typical AI phrases, very even sentence rhythm, long words and em dashes give a score from 0 to 100. It is a hint for a person, not proof.</div>
-      <div><b>Part of the agency.</b> The 8-agent team creates the campaign, the Review Board checks it, and the Project Manager logs the decision in the same Google Sheet ledger.</div>
-    </div>
-  </section>
-</main>
-<footer>AI Creative &amp; Video Marketing Agency · Review Board · Works fully in the browser. Your document stays on this page unless you add a Gemini key.</footer>
+<dialog id="outDialog" aria-labelledby="outTitle">
+  <div class="dlg wide">
+    <div class="dlghead"><div><div class="kicker dark" id="outKicker"></div><h2 id="outTitle"></h2></div><button type="button" class="x" id="outClose" aria-label="Close">✕</button></div>
+    <div class="md" id="outBody"></div>
+  </div>
+</dialog>
+
+<footer>AI Creative &amp; Video Marketing Agency · Mini project · Seyran Gurbanov · Works fully in the browser</footer>
 
 <script>/* Review Board engine: reads a document, finds its parts and runs the 5 reviewer agents.
    Pure JavaScript, no libraries. Works in the browser and in Node (for tests). */
@@ -581,9 +904,12 @@ footer{color:var(--muted);font-size:12.5px;text-align:center;padding:10px 0 30px
     found.sort((a, b) => b.count - a.count || a.word.localeCompare(b.word));
     return { score: score, n: n, label: label, markers: found, markerCount: count, cv: cv, avgLen: avgLen, dashes: dashes, sentences: lens.length };
   }
-  function aiStyleCheck(text, what) {
+  function aiStyleCheck(text, what, kind) {
     const r = aiStyle(text);
-    const c = { title: "Human or AI? (writing style)", style: r };
+    const mkt = kind === "marketing";
+    if (mkt && r.score != null) r.label = r.score >= 60 ? "Sounds like generic AI" : r.score >= 40 ? "Partly generic" : "Sounds natural and human";
+    r.kind = mkt ? "marketing" : "thesis";
+    const c = { title: mkt ? "Human or AI style?" : "Human or AI? (writing style)", style: r };
     if (r.score == null) {
       c.status = "info";
       c.detail = "The " + what + " has only " + plural(r.n, "word") + ". At least 60 words are needed for a style check.";
@@ -594,7 +920,7 @@ footer{color:var(--muted);font-size:12.5px;text-align:center;padding:10px 0 30px
       c.status = r.score >= 60 ? "fail" : r.score >= 40 ? "warn" : "pass";
       c.detail = "AI-style score " + r.score + "/100 (" + r.label + "). " + why +
         " Sentence rhythm: " + (r.cv >= 0.45 ? "varied, like a person." : r.cv >= 0.3 ? "fairly even." : "very even, like a machine.") +
-        " This is a style hint, not proof.";
+        (mkt ? " Our agents write with AI, so this checks that the copy does not sound like generic AI text that followers scroll past." : " This is a style hint, not proof.");
     }
     return c;
   }
@@ -876,6 +1202,34 @@ footer{color:var(--muted);font-size:12.5px;text-align:center;padding:10px 0 30px
   function videoBlocks(text) {
     return text.split("\n").filter((l) => /^video\s*\d+/i.test(l.trim()));
   }
+  // split the scripts into one chunk per video ("Video 1 …" up to the next "Video N" line or an "extra ideas" heading)
+  function videoChunks(text) {
+    const lines = text.split("\n"), out = [];
+    let cur = null;
+    for (const l of lines) {
+      const t = l.trim();
+      if (/^video\s*\d+/i.test(t)) { cur = { title: t, lines: [t] }; out.push(cur); continue; }
+      if (cur && /^(\d+\s+)?(extra|more|bonus|additional)\b.*\b(hooks?|ideas?)\b/i.test(t)) { cur = null; continue; }
+      if (cur) cur.lines.push(t);
+    }
+    return out.map((c) => ({ title: c.title, text: c.lines.join("\n") }));
+  }
+  function videoSeconds(v) {
+    let m = v.title.match(/\((\d{1,3})\s*(?:s|sec|secs|seconds)\)/i) || v.text.match(/\b(?:length|duration|total|runtime)\s*[:\-–]?\s*(\d{1,3})\s*(?:s|sec|secs|seconds)\b/i);
+    if (m) return +m[1];
+    let max = null;
+    v.text.split("\n").filter((l) => /^\|/.test(l)).forEach((row) => {
+      const cell = row.split("|")[1] || "";
+      let mm;
+      const re = /\b(\d{1,2}):(\d{2})\b(?!\s*(?:am|pm))/gi;
+      while ((mm = re.exec(cell))) { const sec = +mm[1] * 60 + +mm[2]; if (max == null || sec > max) max = sec; }
+      const re2 = /(\d{1,3})\s*(?:s|sec|secs|seconds)\b/gi;
+      while ((mm = re2.exec(cell))) { const sec = +mm[1]; if (max == null || sec > max) max = sec; }
+      const re3 = /^\s*\d{1,3}\s*[-–]\s*(\d{1,3})\s*$/;
+      if ((mm = cell.match(re3)) && (max == null || +mm[1] > max)) max = +mm[1];
+    });
+    return max;
+  }
 
   const MKT_REVIEWERS = [
     {
@@ -911,10 +1265,10 @@ footer{color:var(--muted);font-size:12.5px;text-align:center;padding:10px 0 30px
     },
     {
       id: "content", name: "Content Checker", short: "Title match + human or AI",
-      job: "Reads all scripts and captions, checks that they follow the campaign title and product, checks the brand name and if the text looks human or AI-written.",
+      job: "Reads all scripts and captions, checks that they follow the campaign title and product, checks the brand name and if the text sounds human or like generic AI.",
       reads: (d) => d.sections.scripts ? "“" + d.sections.scripts.heading + "”" : "Scripts and captions (not found)",
       input: (d) => "CAMPAIGN TITLE: " + d.title + "\nPRODUCT: " + (d.fields.product ? d.fields.product.value : "") + "\nBRAND: " + brandName(d) + "\n\nSCRIPTS AND CAPTIONS:\n" + (d.sections.scripts ? d.sections.scripts.text : "(missing)"),
-      rules: ["Scripts and captions exist", "They follow the campaign title and the product", "The brand name is always written the same way", "Human or AI? Writing-style check", "Simple, short sentences"],
+      rules: ["Scripts and captions exist", "They follow the campaign title and the product", "The brand name is always written the same way", "Human or AI style? Sounds natural, not generic AI", "Simple, short sentences"],
       run: function (d) {
         const s = d.sections.scripts, out = [];
         if (!s) return [missingSection("Scripts and captions", "A “Scripts and Captions” section")];
@@ -938,7 +1292,7 @@ footer{color:var(--muted);font-size:12.5px;text-align:center;padding:10px 0 30px
             : wl.length ? fail("Brand name", "Must always be “" + brand + "”. Wrong spellings: " + wl.map((w) => "“" + w + "” ×" + wrong[w]).join(", ") + ".")
             : pass("Brand name", "“" + brand + "” is written correctly " + plural(total, "time") + "."));
         }
-        out.push(aiStyleCheck(s.text, "scripts and captions"));
+        out.push(aiStyleCheck(s.text, "scripts and captions", "marketing"));
         const lens = sentences(s.text).map(wordCount);
         const avg = lens.length ? lens.reduce((a, b) => a + b, 0) / lens.length : 0;
         out.push(avg <= 18 ? pass("Simple language", "Average sentence: " + avg.toFixed(1) + " words. Easy to read.")
@@ -957,30 +1311,29 @@ footer{color:var(--muted);font-size:12.5px;text-align:center;padding:10px 0 30px
         const scripts = d.sections.scripts ? d.sections.scripts.text : "";
         const design = d.sections.design ? d.sections.design.text : "";
         if (!scripts && !design) return [missingSection("Creative work", "Scripts or a design section")];
-        const vids = videoBlocks(scripts);
-        const lens = [];
-        vids.forEach((v) => {
-          const m = v.match(/\((\d{1,3})\s*(?:s|sec|secs|seconds)\)|\b(?:length|duration)\s*[:\-–]?\s*(\d{1,3})\s*(?:s|sec|secs|seconds)\b|\b(\d{1,3})[\s-]*(?:s|sec|secs|seconds)\b/i);
-          if (m) lens.push({ name: shorten(v.replace(/\s*\(.*$/, ""), 40), sec: +(m[1] || m[2] || m[3]) });
-        });
+        const vids = videoChunks(scripts);
+        const lens = vids.map((v) => ({ name: shorten(v.title.replace(/\s*\(\d+\s*(?:s|sec|secs|seconds)\)\s*$/i, ""), 40), sec: videoSeconds(v) })).filter((x) => x.sec != null);
         const bad = lens.filter((x) => x.sec < 15 || x.sec > 30);
-        out.push(!vids.length ? warn("Video length 15–30 s", "No lines starting with “Video 1”, “Video 2”… were found.")
-          : !lens.length ? warn("Video length 15–30 s", "No video length was given (e.g. “(20 seconds)”).")
+        out.push(!vids.length ? warn("Video length 15–30 s", "No video scripts were found (lines starting with “Video 1”, “Video 2”…).")
+          : !lens.length ? warn("Video length 15–30 s", "No video length was given (e.g. “(20 seconds)” or a time column 00:00–00:20).")
           : bad.length ? fail("Video length 15–30 s", bad.map((x) => x.name + ": " + x.sec + " s").join("; ") + ". The brand rule is 15–30 seconds.")
           : pass("Video length 15–30 s", lens.map((x) => x.sec + " s").join(", ") + ". All inside the rule."));
-        const hooks = (scripts.match(/hook\s*\(?\s*0\s*[-–]\s*[12](?:[.,]\d)?\s*(?:s|sec|secs|seconds)?\s*\)?/gi) || []).length +
-          (scripts.match(/\bfirst\s+(?:2|two)\s+seconds\b/gi) || []).length;
         const n = Math.max(vids.length, 1);
+        const HOOK = /hook[^\n]{0,30}?(\(?\s*0\s*[-–]\s*[12](?:[.,]\d)?\s*(?:s|sec|secs|seconds)?\s*\)?|first\s+(?:2|two)\s+sec)|\bfirst\s+(?:2|two)\s+seconds\b/i;
+        const hooks = vids.length ? vids.filter((v) => HOOK.test(v.text)).length : (HOOK.test(scripts) ? 1 : 0);
         out.push(hooks >= n ? pass("Hook in the first 2 seconds", plural(hooks, "hook") + " for " + plural(vids.length, "video") + ".")
           : hooks ? warn("Hook in the first 2 seconds", "Only " + hooks + " of " + vids.length + " videos have a hook in 0–2 s.")
           : fail("Hook in the first 2 seconds", "No hook in the first 2 seconds (e.g. “Hook (0–2 s): …”)."));
-        const ctas = scripts.split("\n").filter((l) => /^(cta|call to action)\s*[:\-–]/i.test(l.trim())).length;
-        out.push(ctas >= n ? pass("Call to action", plural(ctas, "call to action", "calls to action") + " for " + plural(vids.length, "video") + ".")
+        const CTA = /^(cta|call to action)\s*[:\-–]|\b(follow (us|@?[\p{L}]+ for)|tag (a|your)\b|try (it|[\p{Lu}][\p{L}]+)|grab (a|yours|your)\b|buy (now|it)|order (now|today)|shop now|link in (bio|the bio)|comment (below|your)|share (this|with)|save (this|for later)|visit|sign up|get yours|pick (one|it) up)/imu;
+        const ctas = vids.length ? vids.filter((v) => v.text.split("\n").some((l) => CTA.test(l.trim()) && !/^todo\b/i.test(l.trim()))).length
+          : (scripts.split("\n").some((l) => CTA.test(l.trim())) ? 1 : 0);
+        out.push(ctas >= n ? pass("Call to action", plural(ctas, "video") + " of " + vids.length + " ask the viewer to act (follow, tag, try…).")
           : ctas ? warn("Call to action", "Only " + ctas + " of " + vids.length + " videos have a call to action.")
-          : fail("Call to action", "No call to action (e.g. “CTA: Follow us…”)."));
+          : fail("Call to action", "No call to action (e.g. “CTA: Follow us…”, “Tag a friend…”)."));
         out.push(/9\s*:\s*16|\bvertical\b/i.test(design + "\n" + scripts) ? pass("Vertical 9:16 format", "The format is vertical 9:16.")
           : warn("Vertical 9:16 format", "The format is not given. TikTok, Reels and Shorts need vertical 9:16."));
-        const colors = d.fields.colors ? splitList(d.fields.colors.value) : [];
+        const colorSrc = d.fields.colors ? d.fields.colors.value : ((d.fields.rules && (d.fields.rules.value.match(/colou?rs?\s*(?:are|:)?\s*([^.\n;]+)/i) || [])[1]) || "");
+        const colors = splitList(colorSrc).filter((c) => !/^(main|brand)$/i.test(c));
         if (!colors.length) out.push(info("Brand colours", "No brand colours in the brief, so this was not checked."));
         else {
           const hay = (design + "\n" + scripts).toLowerCase();
@@ -1038,12 +1391,15 @@ footer{color:var(--muted);font-size:12.5px;text-align:center;padding:10px 0 30px
         const need = [["research", "Market research"], ["plan", "Campaign plan"], ["scripts", "Scripts and captions"], ["design", "Design and video"], ["posting", "Posting plan"]];
         const miss = need.filter(([k]) => !d.sections[k]).map(([, n]) => n);
         out.push(!miss.length ? pass("All parts present", "Research, plan, scripts, design and posting plan are all there.") : fail("All parts present", "Missing: " + miss.join(", ") + "."));
+        const failedBy = [];
+        d.blocks.forEach((b, i) => { if (/^the run failed\b/i.test(b.text)) { const h = d.blocks.slice(0, i).reverse().find((x) => x.heading); failedBy.push(h ? h.text : "an agent"); } });
+        if (failedBy.length) out.push(fail("Every agent delivered", "Work is missing because the run failed for: " + failedBy.join(", ") + ". Run the agents again."));
         const s = d.sections.summary;
         if (!s) { out.push(fail("Summary", "No summary or next-steps section found.")); return out; }
         out.push(pass("Summary", "Found: “" + s.heading + "”."));
         if (!d.fields.goal) out.push(warn("Repeats the goal", "No goal in the brief to compare with."));
         else {
-          const nums = (d.fields.goal.value.match(/\d[\d,.]*/g) || []).map((x) => x.replace(/[.,]$/, ""));
+          const nums = (d.fields.goal.value.match(/\d[\d,.]*/g) || []).map((x) => x.replace(/[.,]$/, "")).filter((x) => x.replace(/\D/g, "").length >= 2);
           const hit = nums.filter((x) => s.text.indexOf(x) >= 0);
           const cov = coverage(d.fields.goal.value, s.text);
           out.push(hit.length || cov.share >= 0.4 ? pass("Repeats the goal", hit.length ? "The summary repeats the goal numbers: " + hit.join(", ") + "." : "The summary repeats the goal.")
@@ -1106,7 +1462,7 @@ footer{color:var(--muted);font-size:12.5px;text-align:center;padding:10px 0 30px
   }
 
   global.ReviewEngine = {
-    PRESETS: PRESETS, blocksFromText: blocksFromText, makeBlock: makeBlock, buildDoc: buildDoc, runReviewer: runReviewer, analyze: analyze,
+    PRESETS: PRESETS, blocksFromText: blocksFromText, looksLikeHeading: looksLikeHeading, makeBlock: makeBlock, buildDoc: buildDoc, runReviewer: runReviewer, analyze: analyze,
     aiStyle: aiStyle, sentences: sentences, words: words, wordCount: wordCount, coverage: coverage, keywords: keywords, fmtInt: fmtInt, plural: plural
   };
 })(typeof window !== "undefined" ? window : globalThis);
@@ -1322,6 +1678,173 @@ References
     thesis: { good: thesisGood, bad: thesisBad }
   };
 })(typeof window !== "undefined" ? window : globalThis);
+</script>
+<script>/* The 8 AI employees of the agency, in the browser.
+   Same roles, same prompts and same hand-offs as src/agents.mjs and src/project-manager.mjs in the GitHub repository. */
+(function (global) {
+  "use strict";
+
+  const DEFAULT_CONFIG = {
+    agency: "AI Creative & Video Marketing Agency",
+    client: {
+      brand: "NovaBrew Coffee",
+      product: "NovaBrew Cold Brew, a ready-to-drink cold coffee in a can",
+      audience: "students and young professionals aged 18-30 in Europe",
+      goal: "launch the new cold brew with short videos and get 5,000 new followers and 200,000 video views on Instagram and TikTok in the first 4 weeks",
+      tone: "energetic, friendly, simple English",
+      brand_rules: [
+        "Always write the brand name as NovaBrew",
+        "Main colors: deep blue and warm orange",
+        "No health claims (for example: do not say it makes you healthier)",
+        "Videos are 15 to 30 seconds and start with a hook in the first 2 seconds"
+      ],
+      platforms: ["TikTok", "Instagram Reels", "YouTube Shorts"]
+    },
+    agents: [
+      { id: "market-researcher", name: "Market Researcher", kit: "seo-employee" },
+      { id: "marketing-coordinator", name: "Marketing Coordinator", kit: "gtm-engineer" },
+      { id: "copywriter", name: "Copywriter", kit: "social-media-employee" },
+      { id: "graphic-designer", name: "Graphic Designer", kit: "web-dev-employee" },
+      { id: "video-editor", name: "Video Editor", kit: "ad-manager-employee" },
+      { id: "social-media-manager", name: "Social Media Manager", kit: "customer-satisfaction-employee" },
+      { id: "sales-partnerships-manager", name: "Sales & Partnerships Manager", kit: "sales-employee" },
+      { id: "project-manager", name: "Project Manager", kit: "chief-of-staff" }
+    ]
+  };
+
+  function brandBlock(cfg) {
+    const c = cfg.client;
+    return [
+      "Agency: " + cfg.agency,
+      "Client brand: " + c.brand,
+      "Product: " + c.product,
+      "Target audience: " + c.audience,
+      "Campaign goal: " + c.goal,
+      "Tone: " + c.tone,
+      "Platforms: " + c.platforms.join(", "),
+      "Brand rules:\n- " + c.brand_rules.join("\n- ")
+    ].join("\n");
+  }
+  const STYLE = "Write in clear, simple English (short sentences). Use Markdown with headings, short lists and tables. Keep the whole answer under 450 words. Do not invent real people's names; use placeholders like [Creator 1].";
+  const cut = (s, n) => { n = n || 2500; return s && s.length > n ? s.slice(0, n) + "\n..." : s || "(not available yet)"; };
+
+  const AGENTS = {
+    "market-researcher": {
+      task: "Researched trends, competitors and the target audience", file: "01-market-research.md", needs: [],
+      gives: "Audience insights, trends, competitors and opportunities",
+      prompt: (cfg) => "You are the Market Researcher in an AI marketing agency.\n" + brandBlock(cfg) + "\n\nTask: write a short market research brief for the campaign with these sections:\n1. Audience: 3 audience insights (what they like, where they watch videos).\n2. Trends: 5 short-video trends or formats that fit this product right now.\n3. Competitors: 3 typical competitor types and what they do well.\n4. Opportunities: 3 clear ideas the brand can use.\n" + STYLE
+    },
+    "marketing-coordinator": {
+      task: "Built the campaign plan and 7-day content calendar", file: "02-campaign-plan.md", needs: ["market-researcher"],
+      gives: "Campaign name, key messages, 7-day calendar, KPIs",
+      prompt: (cfg, prev) => "You are the Marketing Coordinator in an AI marketing agency.\n" + brandBlock(cfg) + "\n\nMarket research from your teammate:\n" + cut(prev["market-researcher"]) + "\n\nTask: write the campaign plan:\n1. Campaign name and one-sentence big idea.\n2. 3 key messages.\n3. A 7-day content calendar as a table with columns: Day | Platform | Video idea | Goal.\n4. 3 KPIs to measure (with simple targets).\n" + STYLE
+    },
+    copywriter: {
+      task: "Wrote video scripts, hooks and captions", file: "03-scripts-and-captions.md", needs: ["marketing-coordinator"],
+      gives: "Scripts for 2 videos, hooks, captions, hashtags",
+      prompt: (cfg, prev) => "You are the Copywriter in an AI marketing agency.\n" + brandBlock(cfg) + "\n\nCampaign plan from the Marketing Coordinator:\n" + cut(prev["marketing-coordinator"]) + "\n\nTask: write content for the first 2 videos of the calendar. For each video give:\n- Title\n- Hook (first 2 seconds)\n- Script as a table: Time | What we see | Voice-over / text on screen (15-30 seconds total)\n- Caption with 3-5 hashtags\nAlso give 3 extra hook ideas.\n" + STYLE
+    },
+    "graphic-designer": {
+      task: "Created the design brief and AI image prompts", file: "04-design-brief.md", needs: ["copywriter"],
+      gives: "Style guide with colours and fonts, 4 AI image prompts",
+      prompt: (cfg, prev) => "You are the Graphic Designer in an AI marketing agency. You do not draw; you prepare the design brief and prompts for AI image tools.\n" + brandBlock(cfg) + "\n\nScripts from the Copywriter:\n" + cut(prev.copywriter) + "\n\nTask: write:\n1. Visual style guide: colors (with hex codes), fonts, mood (3 bullets each).\n2. 4 ready-to-use AI image prompts (for a thumbnail, a product shot, a social post, a story background). Each prompt in a code block, with size/aspect ratio.\n3. A checklist of 4 design rules for the campaign.\n" + STYLE
+    },
+    "video-editor": {
+      task: "Prepared the storyboard, shot list and edit plan", file: "05-storyboard-and-edit-plan.md", needs: ["copywriter", "graphic-designer"],
+      gives: "Storyboard, shot list, edit plan (9:16), AI video prompts",
+      prompt: (cfg, prev) => "You are the Video Editor in an AI marketing agency. You prepare the plan; a human or an AI video tool does the final edit.\n" + brandBlock(cfg) + "\n\nScripts from the Copywriter:\n" + cut(prev.copywriter, 1800) + "\n\nDesign brief from the Graphic Designer:\n" + cut(prev["graphic-designer"], 1200) + "\n\nTask: for Video 1 write:\n1. Storyboard table: Scene | Seconds | Shot (close-up, wide...) | On-screen text | Music/sound.\n2. Shot list for the filming day (6-8 items).\n3. Edit plan: cuts, transitions, subtitles, export settings (9:16, 1080x1920).\n4. 2 AI video prompts for a tool like Runway or Sora.\n" + STYLE
+    },
+    "social-media-manager": {
+      task: "Adapted posts per platform and drafted replies", file: "06-social-posting-and-replies.md", needs: ["copywriter", "marketing-coordinator"],
+      gives: "Posting plan per platform, caption check, comment replies",
+      prompt: (cfg, prev) => "You are the Social Media Manager in an AI marketing agency.\n" + brandBlock(cfg) + "\n\nScripts and captions from the Copywriter:\n" + cut(prev.copywriter, 1800) + "\n\nTask:\n1. Posting plan for Video 1: a table with Platform | Best time | Caption version | Hashtags.\n2. Check each caption against the brand rules and say \"OK\" or what to fix.\n3. Here are 4 sample comments from followers. Sort each one (Question / Praise / Complaint / Spam) and draft a short, friendly reply:\n   a) \"Where can I buy this in Riga?\"\n   b) \"Too sweet for me :(\"\n   c) \"Love the can design!!\"\n   d) \"Check my profile for free followers\"\n" + STYLE
+    },
+    "sales-partnerships-manager": {
+      task: "Built the influencer and partner outreach list", file: "07-partnerships-outreach.md", needs: ["market-researcher"],
+      gives: "6 partner profiles, 2 B2B leads, outreach message",
+      prompt: (cfg, prev) => "You are the Sales & Partnerships Manager in an AI marketing agency.\n" + brandBlock(cfg) + "\n\nMarket research from your teammate:\n" + cut(prev["market-researcher"], 1500) + "\n\nTask:\n1. A table of 6 partner profiles to contact (do not use real names; use types like \"student fitness creator, 20-50k followers\"): Partner type | Platform | Why a good fit | Offer.\n2. 2 B2B leads types (for example campus cafes, coworking spaces) with an offer.\n3. One short outreach message template (under 90 words) with placeholders.\n" + STYLE
+    }
+  };
+  const ORDER = ["market-researcher", "marketing-coordinator", "copywriter", "graphic-designer", "video-editor", "social-media-manager", "sales-partnerships-manager"];
+  const PM = { id: "project-manager", task: "Audited all 7 agents, logged the ledger and emailed the daily brief", file: "00-daily-brief.md",
+    gives: "Audit, daily brief, Google Sheet ledger row, email bulletin" };
+
+  function pmPrompt(cfg, rows) {
+    return "You are the Project Manager of \"" + cfg.agency + "\" working for the client " + cfg.client.brand + " (goal: " + cfg.client.goal + ").\nToday's team status:\n" +
+      rows.map((r) => "- " + r.agent + ": " + r.status + " (" + r.task + ")").join("\n") +
+      "\n\nWrite exactly 3 short next steps for tomorrow, in simple English, one per line, no numbering, no extra text.";
+  }
+  function pmBrief(cfg, rows, nextSteps) {
+    const done = rows.filter((r) => /^Done/.test(r.status)).length;
+    const failed = rows.filter((r) => /^Failed/.test(r.status)).length;
+    const missing = rows.length - done - failed;
+    const md = ["# Daily Brief", "**" + cfg.agency + "** · Client: **" + cfg.client.brand + "**", "",
+      "Summary: " + done + " of " + rows.length + " agents done, " + failed + " failed, " + missing + " not run.", "",
+      "| Time | Agent | Task performed | Status | Output |", "|---|---|---|---|---|"]
+      .concat(rows.map((r) => "| " + r.time + " | " + r.agent + " | " + r.task + " | " + r.status + " | " + r.file + " |"))
+      .concat(["", "## Next steps"], nextSteps.map((s) => "- " + s), [""]).join("\n");
+    return { md: md, done: done, failed: failed, missing: missing };
+  }
+  function pmEmailHtml(cfg, rows, nextSteps, counts, sheetUrl) {
+    const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+    const col = (s) => /^Done/.test(s) ? "#1D7A52" : /^Failed/.test(s) ? "#B0352D" : "#A8701A";
+    return "<div style=\"font-family:Arial,sans-serif;color:#1F2A44;max-width:720px\">" +
+      "<h2 style=\"margin:0 0 4px\">Daily Status Bulletin</h2>" +
+      "<p style=\"margin:0 0 14px;color:#4B5670\">" + esc(cfg.agency) + " · Client: <b>" + esc(cfg.client.brand) + "</b></p>" +
+      "<p style=\"font-size:15px\"><b style=\"color:#1D7A52\">" + counts.done + " done</b> · <b style=\"color:#B0352D\">" + counts.failed + " failed</b> · <b style=\"color:#A8701A\">" + counts.missing + " not run</b></p>" +
+      "<table style=\"border-collapse:collapse;width:100%;font-size:13px\"><tr style=\"background:#EEF2FA\"><th align=\"left\" style=\"padding:6px\">Time</th><th align=\"left\" style=\"padding:6px\">Agent</th><th align=\"left\" style=\"padding:6px\">Task performed</th><th align=\"left\" style=\"padding:6px\">Status</th></tr>" +
+      rows.map((r) => "<tr><td style=\"padding:6px;border-top:1px solid #E1E6F3\">" + esc(r.time) + "</td><td style=\"padding:6px;border-top:1px solid #E1E6F3\"><b>" + esc(r.agent) + "</b></td><td style=\"padding:6px;border-top:1px solid #E1E6F3\">" + esc(r.task) + "</td><td style=\"padding:6px;border-top:1px solid #E1E6F3;color:" + col(r.status) + "\"><b>" + esc(r.status) + "</b></td></tr>").join("") +
+      "</table><h3 style=\"margin:18px 0 6px\">Next steps</h3><ul>" + nextSteps.map((s) => "<li>" + esc(s) + "</li>").join("") + "</ul>" +
+      "<p style=\"color:#7A849C;font-size:12px\">Sent automatically by the Project Manager agent from the agency website." + (sheetUrl ? " Ledger: <a href=\"" + esc(sheetUrl) + "\">Google Sheet</a>" : "") + "</p></div>";
+  }
+
+  // ---------- turn the 8 outputs into one campaign document for the Review Board
+  function demote(md, looksLikeHeading) {
+    return String(md || "").replace(new RegExp("^<" + "!--[\\s\\S]*?-->\\s*", "m"), "").split("\n").map((line) => {
+      const t = line.trim();
+      const h = t.match(/^#{1,6}\s+(.*)$/);
+      if (h) return "### " + h[1].replace(/\*\*/g, "").trim();
+      const plain = t.replace(/\*\*(.+?)\*\*/g, "$1").replace(/^\*\*|\*\*$/g, "").trim();
+      if (plain && looksLikeHeading(plain)) return "### " + plain;
+      return line;
+    }).join("\n");
+  }
+  function campaignName(planMd) {
+    const m = String(planMd || "").match(/campaign name\**\s*[:\-–]\s*\**\s*([^\n*]+)/i);
+    return m ? m[1].replace(/[.*"“”]+$/g, "").replace(/^["“]/, "").trim() : "";
+  }
+  function buildCampaignDoc(cfg, out, looksLikeHeading) {
+    const c = cfg.client;
+    const name = campaignName(out["marketing-coordinator"]);
+    const colorRule = c.brand_rules.find((r) => /colou?r/i.test(r)) || "";
+    const colors = (colorRule.split(":")[1] || "").trim();
+    const L = [];
+    L.push("Campaign: " + c.brand.replace(/\s+(coffee|inc|ltd|company)$/i, "") + (name ? " – " + name : " – Short Video Campaign"));
+    L.push("Agency: " + cfg.agency, "", "Campaign Brief");
+    L.push("Client: " + c.brand, "Product: " + c.product, "Target audience: " + c.audience, "Goal: " + c.goal,
+      "Platforms: " + c.platforms.join(", "), "Tone of voice: " + c.tone);
+    if (colors) L.push("Brand colors: " + colors.replace(/\.$/, ""));
+    L.push("Brand rules: " + c.brand_rules.map((r) => r.replace(/\.$/, "")).join(". ") + ".", "");
+    const parts = [
+      ["1. Market Research (Market Researcher)", ["market-researcher"]],
+      ["2. Campaign Plan (Marketing Coordinator)", ["marketing-coordinator"]],
+      ["3. Scripts and Captions (Copywriter)", ["copywriter"]],
+      ["4. Design and Video (Graphic Designer and Video Editor)", ["graphic-designer", "video-editor"]],
+      ["5. Posting Plan (Social Media Manager)", ["social-media-manager"]],
+      ["6. Partnerships (Sales & Partnerships Manager)", ["sales-partnerships-manager"]],
+      ["7. Summary and Next Steps (Project Manager)", ["project-manager"]]
+    ];
+    parts.forEach(([head, ids]) => {
+      L.push(head);
+      ids.forEach((id) => L.push(demote(out[id] || "(no output)", looksLikeHeading), ""));
+    });
+    return L.join("\n");
+  }
+
+  global.Agency = { DEFAULT_CONFIG: DEFAULT_CONFIG, AGENTS: AGENTS, ORDER: ORDER, PM: PM, pmPrompt: pmPrompt, pmBrief: pmBrief, pmEmailHtml: pmEmailHtml, buildCampaignDoc: buildCampaignDoc, brandBlock: brandBlock };
+})(typeof window !== "undefined" ? window : globalThis);
+</script>
+<script>(function(g){g.AgencyArchive={"outputs": {"market-researcher": "# NovaBrew Market Research Brief\n\n## 1. Audience Insights (Ages 18-30, Europe)\n* **High-speed lifestyle:** Students and young professionals juggle busy schedules. They need quick, tasty energy on the go.\n* **Aesthetic-driven:** They love visually pleasing content. They spot trends fast and value brand vibes and colors.\n* **Platform habits:** They spend their time scrolling TikTok FYP, Instagram Reels, and YouTube Shorts for quick entertainment.\n\n---\n\n## 2. Short-Video Trends (15-30 Seconds)\n| Trend / Format | Why It Works for NovaBrew |\n| :--- | :--- |\n| **\"POV\" (Point of View)** | Relatable morning struggles connect instantly with the viewer. |\n| **ASMR Pour** | Satisfying sounds of the can cracking open grab attention in the first 2 seconds. |\n| **Day in the Life (Vlog)** | Shows NovaBrew naturally fitting into a trendy study or work routine. |\n| **Beat-Drop Transitions** | Fast cuts matched to trending music keep eyes on the screen. |\n| **Behind-the-Scenes** | Raw, unpolished factory or office peeks build brand trust. |\n\n---\n\n## 3. Competitor Analysis\n* **Mass Energy Drink Brands:** They do high-energy stunts and extreme sports well, but lack a cozy, premium coffee feel.\n* **Big Coffee Chains (RTD lines):** They leverage strong name recognition, but their content can feel corporate and boring.\n* **Indie Cold Brew Startups:** They nail aesthetic, lo-fi TikTok videos, but often lack big campaign budgets.\n\n---\n\n## 4. Market Opportunities\n1. **The Deep Blue & Warm Orange Visual Hook:** Use our brand colors boldly in every first frame. Bright orange cans pop against deep blue backgrounds to stop the scroll.\n2. **Relatable Study & Work Hacks:** Partner with micro-influencers like [Creator 1] to show NovaBrew as the ultimate focus fuel during late-night study sessions.\n3. **Simple, No-Stress Messaging:** Keep the text overlay clean and fun. Focus purely on great taste and convenience, avoiding any health claims.\n", "marketing-coordinator": "# NovaBrew Launch Campaign Plan\n\n## 1. Campaign Name & Big Idea\n* **Campaign Name:** Pop the Blue, Feel the Orange.\n* **Big Idea:** Show how a can of NovaBrew instantly upgrades your study or work routine with great taste and zero hassle.\n\n## 2. Key Messages\n* Grab and go: The ultimate ready-to-drink coffee for busy days.\n* Bold flavor: Smooth, cold coffee that always hits the spot.\n* Stand out: Match your vibe with our deep blue and warm orange aesthetic.\n\n## 3. 7-Day Content Calendar\n\n| Day | Platform | Video idea | Goal |\n| :--- | :--- | :--- | :--- |\n| **Day 1** | TikTok | ASMR pour: Cracking open NovaBrew against a deep blue background with a warm orange can pop. | Grab attention and hook first-time viewers. |\n| **Day 2** | Instagram Reels | POV: Waking up late for a 9 AM lecture and grabbing NovaBrew from the fridge. | Drive relatability and profile follows. |\n| **Day 3** | YouTube Shorts | Day in the life: A young professional using NovaBrew for a 3 PM work slump. | Show product utility in daily routines. |\n| **Day 4** | TikTok | Beat-drop transition: Swapping a messy desk for a clean setup with NovaBrew. | Increase video shares and watch time. |\n| **Day 5** | Instagram Reels | [Creator 1] study hack: Late-night library session fueled by NovaBrew. | Build trust through creator partnership. |\n| **Day 6** | YouTube Shorts | Quick aesthetic montage: Deep blue outfits and warm orange cans in the city. | Boost brand aesthetic awareness. |\n| **Day 7** | TikTok | Behind-the-scenes packing office stock of NovaBrew for the weekend. | Drive community engagement and comments. |\n\n## 4. Key Performance Indicators (KPIs)\n* **Instagram Followers:** Grow by 5,000 new followers in 7 days.\n* **TikTok Video Views:** Reach 100,000 total views across all launch videos.\n* **Engagement Rate:** Achieve a 5% engagement rate (likes, comments, and saves) on all platforms.\n", "copywriter": "### Video 1: ASMR Pour (TikTok)\n\n* **Title:** The Ultimate Coffee ASMR\n* **Hook (First 2 seconds):** Crisp *pop* of the can lid, slow-motion splash against deep blue and warm orange lights.\n\n| Time | What we see | Voice-over / Text on screen |\n| :--- | :--- | :--- |\n| 00:00 - 00:05 | Close-up on the warm orange NovaBrew can. A hand opens it. | *Pop!* Ready for your new favorite cold brew? |\n| 00:05 - 00:15 | Slow pour of dark coffee over ice cubes in a glass. | Smooth, bold flavor. Zero hassle. Just pure chill. |\n| 00:15 - 00:20 | Taking the first refreshing sip while smiling at the camera. | Grab a NovaBrew and taste the vibe. |\n\n* **Caption:** Crank up the volume. 🧊✨ Pop the blue, feel the orange with NovaBrew! #NovaBrew #ColdBrew #CoffeeTok #ASMR\n\n---\n\n### Video 2: POV Late Lecture (Instagram Reels)\n\n* **Title:** POV: You Overslept\n* **Hook (First 2 seconds):** Alarm clock ringing loudly at 8:45 AM, eyes wide open in panic.\n\n| Time | What we see | Voice-over / Text on screen |\n| :--- | :--- | :--- |\n| 00:00 - 00:05 | Rushing out of bed, grabbing shoes in a hurry. | POV: You overslept for your 9 AM lecture. |\n| 00:05 - 00:15 | Running to the fridge, grabbing a cold NovaBrew can, and locking the door. | No time for a coffee shop line. Grab your backup. |\n| 00:15 - 00:25 | Walking into class calmly, sipping NovaBrew. Deep blue bag, warm orange can. | NovaBrew always saves the day. Grab and go! |\n\n* **Caption:** We’ve all been there. 🏃💨 Tag a friend who is always late! #NovaBrew #StudentLife #MorningRoutine #CoffeeLovers\n\n---\n\n### 3 Extra Hook Ideas\n\n1. \"Stop scrolling if you need a cold coffee right now.\"\n2. \"How to upgrade your study setup in two seconds flat.\"\n3. \"Wait until you hear this satisfying coffee pour.\"\n", "graphic-designer": "### 1. Visual Style Guide\n\n**Colors (Hex Codes):**\n* Deep Blue: `#0F172A` (Primary brand background)\n* Warm Orange: `#F97316` (Highlight and accent color)\n* Crisp White: `#FFFFFF` (Text and clean details)\n\n**Fonts:**\n* Headline: Bold Sans-Serif (Modern, loud, easy to read)\n* Body: Clean Modern Sans-Serif (Simple, friendly, minimalist)\n* Accent: Rounded Marker Style (For fun TikTok/Reels overlays)\n\n**Mood:**\n* Energetic and fast-paced\n* Friendly and approachable\n* Modern and clean youth aesthetic\n\n---\n\n### 2. AI Image Prompts\n\n**Thumbnail**\n```text\nA dynamic YouTube thumbnail featuring a warm orange NovaBrew can front and center, dramatic lighting, deep blue background, bold typography space, high contrast, 4k resolution --ar 16:9\n```\n*Size/Aspect Ratio:* 16:9 (1920x1080)\n\n**Product Shot**\n```text\nA sleek product photograph of a NovaBrew ready-to-drink cold brew can, sitting on a concrete desk with ice cubes and coffee beans scattered around, neon warm orange and deep blue studio lighting, commercial photography --ar 4:5\n```\n*Size/Aspect Ratio:* 4:5 (1080x1350)\n\n**Social Post**\n```text\nA lifestyle flat lay for Instagram, a trendy European student desk, a warm orange NovaBrew can, a smartphone, a minimalist notebook, deep blue accents, bright daylight, aesthetic vibe --ar 1:1\n```\n*Size/Aspect Ratio:* 1:1 (1080x1080)\n\n**Story Background**\n```text\nAn abstract vertical background for Instagram Stories, smooth gradient of deep blue and glowing warm orange, subtle coffee bean shapes floating, clean space in the middle for text --ar 9:16\n```\n*Size/Aspect Ratio:* 9:16 (1080x1920)\n\n---\n\n### 3. Campaign Design Rules\n\n* **Brand Name:** Always write **NovaBrew** clearly on every product shot and video overlay.\n* **Color Rule:** Use the 80/20 rule: deep blue as the base, warm orange as the main pop of color.\n* **Text Check:** Keep text on screen short, large, and placed safely away from TikTok/Reels UI buttons.\n* **No Health Claims:** Stick strictly to lifestyle, taste, and convenience; do not claim health or wellness benefits.\n", "video-editor": "### Video 1 Edit Plan & Production Guide\n\n#### 1. Storyboard Table\n\n| Scene | Seconds | Shot | On-Screen Text | Music / Sound |\n| :--- | :--- | :--- | :--- | :--- |\n| 1 | 00:00 - 00:02 | Extreme close-up | *Pop!* | Loud *POP* sound, bass drop. |\n| 2 | 00:02 - 00:05 | Close-up | Ready for your new favorite? | Upbeat, rhythmic lofi beat starts. |\n| 3 | 00:05 - 00:15 | Slow-motion macro shot | Smooth, bold flavor. | Ice cubes clinking, liquid pouring. |\n| 4 | 00:15 - 00:20 | Medium shot | Grab a NovaBrew. | Satisfied sigh, cheerful chime. |\n\n---\n\n#### 2. Shot List (Filming Day)\n\n1. Extreme close-up of [Creator 1]’s hands popping the can tab.\n2. Lighting setup: Deep blue backlight (`#0F172A`) with a warm orange rim light (`#F97316`).\n3. Slow-motion pour of dark coffee into a glass filled with clear ice.\n4. Close-up of the warm orange NovaBrew can sitting on a clean surface.\n5. Medium shot of [Creator 1] taking a refreshing first sip and smiling.\n6. B-roll of the can spinning on a flat surface with studio lighting.\n\n---\n\n#### 3. Edit Plan\n\n* **Cuts:** Fast, rhythmic cuts on beats 1 and 3 during the first 5 seconds.\n* **Transitions:** Smooth zoom-ins and quick whip pans. No complex effects.\n* **Subtitles:** Center-aligned, Bold Sans-Serif font in Crisp White (`#FFFFFF`), with a Warm Orange (`#F97316`) highlight on key words like \"NovaBrew\" and \"chill\".\n* **Export Settings:** \n  * Aspect Ratio: 9:16 vertical \n  * Resolution: 1080x1920\n  * Frame Rate: 30 fps\n\n---\n\n#### 4. AI Video Prompts\n\n* **Prompt 1:** `A macro shot of a warm orange aluminum can opening in slow motion, droplets of water on the surface, dramatic deep blue and warm orange studio lighting, 4k resolution, vertical --ar 9:16`\n* **Prompt 2:** `Cinematic slow-motion pour of dark iced coffee into a clear glass, dark minimalist background with neon blue and orange accents, commercial style, vertical --ar 9:16`\n", "social-media-manager": "### 1. Posting Plan for Video 1\n\n| Platform | Best time | Caption version | Hashtags |\n| :--- | :--- | :--- | :--- |\n| TikTok | 18:00 | Crank up the volume. 🧊✨ Pop the blue, feel the orange with NovaBrew! | #NovaBrew #ColdBrew #CoffeeTok #ASMR |\n| Instagram Reels | 12:30 | Crank up the volume. 🧊✨ Pop the blue, feel the orange with NovaBrew! | #NovaBrew #ColdBrew #CoffeeGram #ASMR |\n| YouTube Shorts | 15:00 | Crank up the volume. 🧊✨ Pop the blue, feel the orange with NovaBrew! | #NovaBrew #ColdBrew #Shorts #ASMR |\n\n---\n\n### 2. Caption Brand Rules Check\n\n* **Video 1 Caption:** \"Crank up the volume. 🧊✨ Pop the blue, feel the orange with NovaBrew! #NovaBrew #ColdBrew #CoffeeTok #ASMR\"\n  * **Result:** **OK** (Brand name is correct, colors mentioned, no health claims, simple English).\n\n* **Video 2 Caption:** \"We’ve all been there. 🏃💨 Tag a friend who is always late! #NovaBrew #StudentLife #MorningRoutine #CoffeeLovers\"\n  * **Result:** **OK** (Brand name is correct, no health claims, simple English).\n\n---\n\n### 3. Follower Comments & Replies\n\n#### a) \"Where can I buy this in Riga?\"\n* **Type:** Question\n* **Reply:** Hey! You can find NovaBrew in local supermarkets across Riga. Check our store locator in bio! 🛒\n\n#### b) \"Too sweet for me :(\"\n* **Type:** Complaint\n* **Reply:** Thanks for the feedback! NovaBrew is bold and smooth, but we hear you. Stay tuned for new flavors! 🧊\n\n#### c) \"Love the can design!!\"\n* **Type:** Praise\n* **Reply:** Thank you! We love our deep blue and warm orange look too. 🧡💙\n\n#### d) \"Check my profile for free followers\"\n* **Type:** Spam\n* **Reply:** *[Hidden by Moderator]*\n", "sales-partnerships-manager": "# NovaBrew Launch Strategy: Sales & Partnerships\n\n## 1. Creator Partnerships (TikTok, Instagram Reels, YouTube Shorts)\n\n| Partner Type | Platform | Why a Good Fit | Offer |\n| :--- | :--- | :--- | :--- |\n| Student lifestyle vlogger (20k-50k followers) | TikTok | Matches the busy student routine. | Free NovaBrew product box + affiliate code (15% commission). |\n| Campus fitness creator (15k-40k followers) | Instagram Reels | Fits active young adults needing a quick boost. | Paid post + free monthly supply of NovaBrew. |\n| Study-gram aesthetic creator (30k-60k followers) | YouTube Shorts | Loves the deep blue and warm orange brand colors. | Co-branded giveaway box + commission. |\n| Young remote worker (20k-40k followers) | TikTok | Relatable \"Day in the Life\" desk content. | Free product supply + performance bonus. |\n| Urban fashion student (25k-50k followers) | Instagram Reels | Strong visual style fits trend-driven content. | Paid short video + free product. |\n| Indie music DJ/producer (20k-50k followers) | TikTok | Great for beat-drop transition videos. | Sponsorship for short video + free NovaBrew. |\n\n---\n\n## 2. B2B Channel Leads & Offers\n\n* **University Campus Cafes:**\n  * **Why:** High foot traffic of students aged 18-30 daily.\n  * **Offer:** Free branded display fridge + first 3 cases of NovaBrew at 50% off for the launch week.\n* **Modern Coworking Spaces:**\n  * **Why:** Young professionals need fast, tasty coffee during long work hours.\n  * **Offer:** Free Friday tasting bar event supplied by us + wholesale discount for their micro-market.\n\n---\n\n## 3. Creator Outreach Message Template\n\n**Subject:** Let's collab? ⚡️ Free NovaBrew for you!\n\n> Hey [Creator Name]! \n> \n> We love your vibe and think your followers would vibe with **NovaBrew**. \n> \n> We just launched our ready-to-drink cold coffee in a can across Europe. It’s bold, smooth, and comes in our signature deep blue and warm orange cans. \n> \n> We want to send you a free PR box to try it out. If you love it, we'd love to chat about a paid partnership for TikTok/Reels! \n> \n> Drop your shipping address if you are in! \n> \n> Best,  \n> [Your Name], NovaBrew Team\n", "project-manager": "# Daily Brief\n**AI Creative & Video Marketing Agency** · Client: **NovaBrew Coffee**\n\nSummary: 7 of 7 agents done, 0 failed, 0 not run.\n\n| Time | Agent | Task performed | Status | Output |\n|---|---|---|---|---|\n| 17:56 | Market Researcher | Researched trends, competitors and the target audience | Done | 01-market-research.md |\n| 17:56 | Marketing Coordinator | Built the campaign plan and 7-day content calendar | Done | 02-campaign-plan.md |\n| 17:56 | Copywriter | Wrote video scripts, hooks and captions | Done | 03-scripts-and-captions.md |\n| 17:56 | Graphic Designer | Created the design brief and AI image prompts | Done | 04-design-brief.md |\n| 17:57 | Video Editor | Prepared the storyboard, shot list and edit plan | Done | 05-storyboard-and-edit-plan.md |\n| 17:57 | Social Media Manager | Adapted posts per platform and drafted replies | Done | 06-social-posting-and-replies.md |\n| 17:57 | Sales & Partnerships Manager | Built the influencer and partner outreach list | Done | 07-partnerships-outreach.md |\n\n## Next steps\n- Review all finalized video scripts, design assets, and content calendars with the client for final approval.\n- Set up content scheduling tools on Instagram and TikTok to upload the first batch of launch videos.\n- Begin outreach to the shortlisted influencers and partners to secure collaborations for the cold brew launch.\n"}, "meta": {"market-researcher": {"time": "17:56", "model": "gemini-flash-lite-latest"}, "marketing-coordinator": {"time": "17:56", "model": "gemini-flash-lite-latest"}, "copywriter": {"time": "17:56", "model": "gemini-flash-lite-latest"}, "graphic-designer": {"time": "17:56", "model": "gemini-flash-lite-latest"}, "video-editor": {"time": "17:57", "model": "gemini-flash-lite-latest"}, "social-media-manager": {"time": "17:57", "model": "gemini-flash-lite-latest"}, "sales-partnerships-manager": {"time": "17:57", "model": "gemini-flash-lite-latest"}, "project-manager": {"time": "17:57", "model": "gemini-flash-lite-latest"}}};})(typeof window!=='undefined'?window:globalThis);
 </script>
 <script>/* Review Board UI. Browser only, no libraries (pdf.js is embedded and loaded only for PDF files). */
 (function () {
@@ -1751,9 +2274,6 @@ References
     const d = new Date(), z = (n) => String(n).padStart(2, "0");
     return d.getFullYear() + "-" + z(d.getMonth() + 1) + "-" + z(d.getDate()) + " " + z(d.getHours()) + ":" + z(d.getMinutes()) + ":" + z(d.getSeconds());
   }
-  async function logToSheet(url, rows) {
-    await fetch(url, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ action: "log", rows: rows }) });
-  }
 
   // ------------------------------------------------------------ results rendering
   function resetResults() {
@@ -1781,7 +2301,7 @@ References
     if (!st || st.score == null) return "";
     const pos = Math.max(1, Math.min(99, st.score));
     const chips = st.markers.slice(0, 12).map((m) => '<span class="mchip">' + esc(m.word) + (m.count > 1 ? " ×" + m.count : "") + "</span>").join("");
-    return '<div class="meter"><div class="meterhead"><b>Human or AI?</b><span>AI-style score <b>' + st.score + "</b>/100 · " + esc(st.label) + "</span></div>" +
+    return '<div class="meter"><div class="meterhead"><b>' + (st.kind === "marketing" ? "Human or AI style?" : "Human or AI?") + '</b><span>AI-style score <b>' + st.score + "</b>/100 · " + esc(st.label) + "</span></div>" +
       '<div class="track"><span class="z1"></span><span class="z2"></span><span class="z3"></span><i style="left:' + pos + '%"></i></div>' +
       '<div class="scale"><span>Human-like</span><span>Mixed</span><span>AI-like</span></div>' +
       (chips ? '<div class="mchips"><span>AI-style phrases:</span>' + chips + "</div>" : "") + "</div>";
@@ -1835,8 +2355,15 @@ References
     const mode = state.mode, p = E.PRESETS[mode];
     const doc = E.buildDoc(E.blocksFromText(text), mode);
     const strict = $("optStrict").checked;
-    const key = $("optKey").value.trim();
-    const useAi = !!key;
+    const key = $("cfgKey") ? $("cfgKey").value.trim() : "";
+    const bridge = window.AgencyBridge && window.AgencyBridge.url() ? window.AgencyBridge : null;
+    const useAi = (!!key || !!bridge) && $("optAiRole").value !== "off";
+    let bridgeRun = null;
+    const askAi = async (prompt) => {
+      if (key) return Gemini.ask(key, prompt);
+      if (!bridgeRun) bridgeRun = await bridge.start("review");
+      return bridge.gemini(bridgeRun.runId, prompt, true);
+    };
     const aiVotes = $("optAiRole").value === "voter";
     const results = [];
     const fast = $("optFast").checked;
@@ -1858,7 +2385,7 @@ References
       else if (useAi) {
         setAgent(i, "running", "Asking Gemini…");
         try {
-          const a = await Gemini.ask(key, geminiPrompt(rv, doc, mode));
+          const a = await askAi(geminiPrompt(rv, doc, mode));
           const parsed = Gemini.parse(a.text);
           if (!parsed) res.ai = { error: "The answer was not in the expected format." };
           else {
@@ -1867,7 +2394,7 @@ References
           }
         } catch (e) {
           res.ai = { error: e.message || String(e) };
-          if (/did not accept/.test(res.ai.error)) keyError = res.ai.error + " Check the key in the settings.";
+          if (/did not accept|rejected|not set in the apps script|daily (ai )?limit|could not start|could not read|no open live run/i.test(res.ai.error)) keyError = res.ai.error;
         }
       }
       results.push(res);
@@ -1887,14 +2414,14 @@ References
     $("openAll").textContent = "Open all";
     $("results").scrollIntoView({ behavior: "smooth", block: "start" });
     // ledger
-    const url = $("optSheet").value.trim();
+    const url = window.AgencyBridge ? window.AgencyBridge.url() : "";
     if (url && $("optLog").checked) {
       const ts = stamp();
       const rows = results.map((r, i) => [ts, "Review Board " + (i + 1) + ": " + r.name, r.verdict === "SKIPPED" ? "Skipped (strict chain)" : "Checked " + r.reads + " (" + r.checks.length + " checks)",
         r.verdict === "YES" ? "Done: YES" : r.verdict === "NO" ? "Failed: NO" : "Skipped"]);
       rows.push([ts, "Project Manager", "Final decision for: " + (doc.title || "document"), approved ? "Done: IMPLEMENT" : "Failed: RETURN FOR FIXES"]);
-      try { await logToSheet(url, rows); $("runNote").textContent = E.plural(rows.length, "row") + " sent to the Google Sheet ledger."; }
-      catch (e) { $("runNote").textContent = "Could not send to the Google Sheet: " + (e.message || e); }
+      const res = await window.AgencyBridge.log(rows);
+      $("runNote").textContent = res.ok ? E.plural(rows.length, "row") + (res.unconfirmed ? " sent to the Google Sheet ledger." : " logged in the Google Sheet ledger.") : "Could not log to the Google Sheet: " + (res.error || "error");
     }
     $("runBtn").disabled = false;
     $("runBtn").textContent = "Start review";
@@ -1980,25 +2507,479 @@ References
       $("copyBtn").textContent = ok ? "Copied ✓" : "Copy failed";
       setTimeout(() => { $("copyBtn").textContent = "Copy as text"; }, 1800);
     });
-    // settings
-    const savedKey = store.get("rb_gemini_key");
-    if (savedKey) { $("optKey").value = savedKey; $("optRemember").checked = true; }
-    const savedSheet = store.get("rb_sheet_url");
-    if (savedSheet) { $("optSheet").value = savedSheet; $("optLog").checked = store.get("rb_sheet_on") === "1"; }
-    const saveKey = () => store.set("rb_gemini_key", $("optRemember").checked ? $("optKey").value.trim() : "");
-    $("optKey").addEventListener("change", () => { Gemini.models = null; Gemini.working = null; saveKey(); });
-    $("optRemember").addEventListener("change", saveKey);
-    $("optSheet").addEventListener("change", () => store.set("rb_sheet_url", $("optSheet").value.trim()));
-    $("optLog").addEventListener("change", () => store.set("rb_sheet_on", $("optLog").checked ? "1" : ""));
-    $("toggleKey").addEventListener("click", () => {
-      const k = $("optKey");
-      k.type = k.type === "password" ? "text" : "password";
-      $("toggleKey").textContent = k.type === "password" ? "Show" : "Hide";
-    });
     setMode("marketing");
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
-  window.ReviewBoardApp = { DocReader: DocReader, state: state, runReview: runReview };
+  function loadDoc(text, name, mode, autorun) {
+    if (state.running) return;
+    if (mode && mode !== state.mode) setMode(mode);
+    setDocText(text, name);
+    fileMsg("Loaded <b>" + esc(name) + "</b>. The reviewers read it exactly as the agents wrote it.", "ok");
+    window.scrollTo(0, 0);
+    if (autorun) setTimeout(runReview, 350);
+  }
+  document.addEventListener("change", (e) => { if (e.target && e.target.id === "cfgKey") { Gemini.models = null; Gemini.working = null; } });
+  window.ReviewBoardApp = { DocReader: DocReader, state: state, runReview: runReview, loadDoc: loadDoc };
+})();
+</script>
+<script>/* Agency website: navigation, connections, the live 8-agent run and the proof page. */
+(function () {
+  "use strict";
+  // ---- links of the real project (edit here) ----
+  const SITE = {
+    repoUrl: "https://github.com/seiranabdullah/ai-creative-video-agency",
+    sheetUrl: "https://docs.google.com/spreadsheets/d/1kQIthVf84eAV-QY9xxGR8ejcgewBRdvRsMU3WhxDb8o/edit?usp=sharing",
+    webhookUrl: "https://script.google.com/macros/s/AKfycbwPmhCF2dOu09jOanV_hjS8QO2C032u8fJBptbgMKWyCGUpgwquuYGjeY_ogDTT_jiXRA/exec",
+    videoUrl: ""
+  };
+  const real = (u) => (u && !/^\{\{/.test(u) ? u : "");
+
+  const A = window.Agency, E = window.ReviewEngine, ARCH = window.AgencyArchive;
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const store = {
+    get(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { if (v == null || v === "") window.localStorage.removeItem(k); else window.localStorage.setItem(k, v); } catch (e) { /* blocked */ } }
+  };
+  const z = (n) => String(n).padStart(2, "0");
+  const nowStamp = () => { const d = new Date(); return d.getFullYear() + "-" + z(d.getMonth() + 1) + "-" + z(d.getDate()) + " " + z(d.getHours()) + ":" + z(d.getMinutes()) + ":" + z(d.getSeconds()); };
+  const nowTime = () => { const d = new Date(); return z(d.getHours()) + ":" + z(d.getMinutes()); };
+
+  // ------------------------------------------------------------ markdown (safe: text is escaped first)
+  function inline(s) {
+    return esc(s)
+      .replace(/`([^`]+)`/g, "<code>$1</code>")
+      .replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
+      .replace(/(^|[^*\w])\*([^*\n]+)\*(?!\w)/g, "$1<i>$2</i>")
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  }
+  function mdToHtml(md) {
+    const lines = String(md || "").replace(/\r/g, "").split("\n");
+    const out = [];
+    let i = 0;
+    while (i < lines.length) {
+      const l = lines[i];
+      if (/^\s*```/.test(l)) {
+        const buf = []; i++;
+        while (i < lines.length && !/^\s*```/.test(lines[i])) buf.push(lines[i++]);
+        i++; out.push("<pre><code>" + esc(buf.join("\n")) + "</code></pre>"); continue;
+      }
+      const h = l.match(/^\s*(#{1,6})\s+(.*)$/);
+      if (h) { const n = Math.min(4, h[1].length); out.push("<h" + n + ">" + inline(h[2]) + "</h" + n + ">"); i++; continue; }
+      if (/^\s*(-{3,}|\*{3,}|_{3,})\s*$/.test(l)) { out.push("<hr>"); i++; continue; }
+      if (/^\s*\|/.test(l)) {
+        const rows = [];
+        while (i < lines.length && /^\s*\|/.test(lines[i])) rows.push(lines[i++]);
+        const cells = (r) => r.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
+        const isSep = (r) => /^[\s|:-]+$/.test(r) && /-/.test(r);
+        const data = rows.filter((r) => !isSep(r));
+        if (!data.length) continue;
+        let h2 = "<table><thead><tr>" + cells(data[0]).map((c) => "<th>" + inline(c) + "</th>").join("") + "</tr></thead><tbody>";
+        data.slice(1).forEach((r) => { h2 += "<tr>" + cells(r).map((c) => "<td>" + inline(c) + "</td>").join("") + "</tr>"; });
+        out.push(h2 + "</tbody></table>"); continue;
+      }
+      if (/^\s*([-*+]|\d+[.)])\s+/.test(l)) {
+        const ordered = /^\s*\d+[.)]\s+/.test(l);
+        const items = [];
+        while (i < lines.length && /^\s*([-*+]|\d+[.)])\s+/.test(lines[i])) { items.push(lines[i].replace(/^\s*([-*+]|\d+[.)])\s+/, "")); i++; }
+        out.push((ordered ? "<ol>" : "<ul>") + items.map((t) => "<li>" + inline(t) + "</li>").join("") + (ordered ? "</ol>" : "</ul>"));
+        continue;
+      }
+      if (!l.trim()) { i++; continue; }
+      const para = [];
+      while (i < lines.length && lines[i].trim() && !/^\s*(#{1,6}\s|```|\||([-*+]|\d+[.)])\s+|(-{3,}|\*{3,})\s*$)/.test(lines[i])) para.push(lines[i++].trim());
+      if (para.length) out.push("<p>" + inline(para.join(" ")) + "</p>"); else i++;
+    }
+    return out.join("\n");
+  }
+
+  // ------------------------------------------------------------ Gemini (same logic as src/gemini.mjs)
+  const AI = {
+    API: "https://generativelanguage.googleapis.com/v1beta/",
+    PREFERRED: ["gemini-flash-lite-latest", "gemini-2.5-flash-lite", "gemini-flash-latest", "gemini-2.5-flash", "gemini-2.0-flash-lite", "gemini-2.0-flash"],
+    list: null, working: null, keyUsed: null,
+    async fetchT(url, opts, ms) {
+      const c = new AbortController(); const t = setTimeout(() => c.abort(), ms);
+      try { return await fetch(url, Object.assign({}, opts, { signal: c.signal })); } finally { clearTimeout(t); }
+    },
+    async models(key) {
+      if (this.list && this.keyUsed === key) return this.list;
+      this.keyUsed = key; this.working = null;
+      let names = [];
+      try {
+        const r = await this.fetchT(this.API + "models?pageSize=200", { headers: { "x-goog-api-key": key } }, 20000);
+        if (r.status === 400 || r.status === 401 || r.status === 403) throw new Error("KEY");
+        if (r.ok) names = ((await r.json()).models || []).filter((m) => (m.supportedGenerationMethods || []).indexOf("generateContent") >= 0).map((m) => String(m.name).replace(/^models\//, ""));
+      } catch (e) { if (e.message === "KEY") throw new Error("Google rejected the Gemini API key. Check it in Connections."); }
+      const ordered = this.PREFERRED.filter((n) => names.indexOf(n) >= 0);
+      this.list = ordered.length ? ordered : this.PREFERRED.slice();
+      return this.list;
+    },
+    async once(key, model, prompt, noThink) {
+      const body = { contents: [{ role: "user", parts: [{ text: prompt }] }], generationConfig: { temperature: 0.8 } };
+      if (!noThink && /^gemini-2\.5-flash/.test(model)) body.generationConfig.thinkingConfig = { thinkingBudget: 0 };
+      let r;
+      try {
+        r = await this.fetchT(this.API + "models/" + model + ":generateContent", { method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": key }, body: JSON.stringify(body) }, 180000);
+      } catch (e) { const err = new Error(e.name === "AbortError" ? "timeout" : "network error"); err.status = "net"; throw err; }
+      if (!r.ok) {
+        let msg = ""; try { msg = ((await r.json()).error || {}).message || ""; } catch (e) { /* none */ }
+        const err = new Error(msg || "HTTP " + r.status); err.status = r.status; throw err;
+      }
+      const j = await r.json();
+      const parts = (((j.candidates || [])[0] || {}).content || {}).parts || [];
+      const text = parts.filter((p) => !p.thought).map((p) => p.text || "").join("").trim();
+      if (!text) { const err = new Error("empty reply"); err.status = "empty"; throw err; }
+      return text;
+    },
+    async generate(key, prompt, onModel) {
+      const models = await this.models(key);
+      const order = this.working ? [this.working].concat(models.filter((m) => m !== this.working)) : models;
+      const tried = [];
+      for (const model of order.slice(0, 4)) {
+        let noThink = false;
+        for (let attempt = 0; attempt < 3; attempt++) {
+          if (onModel) onModel(model);
+          try { const text = await this.once(key, model, prompt, noThink); this.working = model; return { text: text, model: model }; }
+          catch (e) {
+            const m = String(e.message).toLowerCase();
+            tried.push(model + ": " + e.message);
+            if (e.status === 400 && /thinking/.test(m) && !noThink) { noThink = true; continue; }
+            if (e.status === 401 || e.status === 403 || /api key not valid/.test(m)) throw new Error("Google rejected the Gemini API key. Check it in Connections.");
+            if (e.status === 429 || e.status === 503 || e.status === 500 || /overloaded|unavailable/.test(m)) { await sleep(4000 * (attempt + 1)); continue; }
+            break;
+          }
+        }
+      }
+      throw new Error("Gemini did not answer. " + (tried.slice(-2).join(" | ") || ""));
+    }
+  };
+
+  // ------------------------------------------------------------ Google Sheet bridge (same payloads as src/sheets.mjs)
+  const Bridge = {
+    url() { return $("cfgWebhook").value.trim(); },
+    async post(payload) {
+      const url = this.url();
+      if (!url) return { ok: false, skipped: true };
+      const body = JSON.stringify(Object.assign({ secret: "" }, payload));
+      try {
+        const r = await fetch(url, { method: "POST", body: body, redirect: "follow" });
+        const t = await r.text();
+        let d; try { d = JSON.parse(t); } catch (e) { d = { ok: false, error: t.slice(0, 120) }; }
+        return d.ok ? d : { ok: false, error: d.error || "unknown error" };
+      } catch (e) {
+        try { await fetch(url, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: body }); return { ok: true, unconfirmed: true }; }
+        catch (e2) { return { ok: false, error: "network error" }; }
+      }
+    },
+    log(rows) { return this.post({ action: "log", rows: rows }); },
+    email(m) { return this.post({ action: "email", to: m.to, subject: m.subject, html: m.html, text: m.text, runId: m.runId || "" }); },
+    async start(kind) {
+      const r = await this.post({ action: "start", kind: kind });
+      if (r.skipped) throw new Error("The Google bridge is not set (Connections).");
+      if (r.unconfirmed) throw new Error("This browser could not read the answer of the Google bridge. Try Chrome or Edge.");
+      if (!r.ok) throw new Error(r.error || "The live run could not start.");
+      return r;
+    },
+    async gemini(runId, prompt, json) {
+      const r = await this.post({ action: "gemini", runId: runId, prompt: prompt, json: !!json });
+      if (r.unconfirmed) throw new Error("This browser could not read the answer of the Google bridge.");
+      if (!r.ok) throw new Error(r.error || "Gemini did not answer.");
+      return { text: r.text, model: r.model };
+    },
+    async status() {
+      if (!this.url()) return null;
+      try { const r = await fetch(this.url(), { method: "GET" }); return await r.json(); } catch (e) { return null; }
+    }
+  };
+  window.AgencyBridge = Bridge;
+
+  // ------------------------------------------------------------ navigation
+  const PAGES = ["overview", "team", "review", "proof"];
+  function showPage() {
+    const id = (location.hash || "#overview").slice(1);
+    const page = PAGES.indexOf(id) >= 0 ? id : "overview";
+    PAGES.forEach((p) => { $("page-" + p).hidden = p !== page; });
+    document.querySelectorAll(".nav a").forEach((a) => { const on = a.getAttribute("data-page") === page; a.classList.toggle("on", on); if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+    document.title = $("page-" + page).getAttribute("data-title") + " · AI Creative & Video Marketing Agency";
+    window.scrollTo(0, 0);
+  }
+
+  // ------------------------------------------------------------ connections
+  function connState() {
+    const ok = !!Bridge.url();
+    $("connDot").classList.toggle("ok", ok);
+    $("connDot").title = ok ? "Connected to the agency's Google bridge" : "The Google bridge is not set";
+  }
+  async function refreshStatus() {
+    const st = await Bridge.status();
+    state.bridge = st;
+    const el = $("bridgeMsg");
+    if (!st) { el.textContent = Bridge.url() ? "Status could not be read here; live runs will still try the bridge." : "Not set."; return; }
+    el.textContent = st.aiReady ? "✓ Connected · AI ready · " + st.runsLeft + " of " + st.runLimit + " live runs left today" : "Connected, but the Gemini key is not set in the Apps Script yet.";
+    if (state.source === "archive" && !state.running) $("teamLimit").textContent = st.aiReady ? "No setup needed · " + st.runsLeft + " of " + st.runLimit + " live runs left today" : "Live runs are not ready yet: the AI key is not set in the Google bridge.";
+    $("teamLimit").classList.toggle("warnline", !st.aiReady);
+  }
+  function initConnections() {
+    const d = $("connDialog");
+    $("openConn").addEventListener("click", () => d.showModal());
+    const k = store.get("ag_gemini_key"); if (k) { $("cfgKey").value = k; $("cfgRemember").checked = true; }
+    $("cfgWebhook").value = store.get("ag_webhook") || real(SITE.webhookUrl);
+    $("cfgEmail").value = store.get("ag_email") || "";
+    const save = () => {
+      store.set("ag_gemini_key", $("cfgRemember").checked ? $("cfgKey").value.trim() : "");
+      const wh = $("cfgWebhook").value.trim();
+      store.set("ag_webhook", wh && wh !== real(SITE.webhookUrl) ? wh : "");
+      store.set("ag_email", $("cfgEmail").value.trim());
+      connState();
+    };
+    ["cfgKey", "cfgWebhook", "cfgEmail"].forEach((id) => $(id).addEventListener("change", save));
+    $("cfgRemember").addEventListener("change", save);
+    d.addEventListener("close", save);
+    $("toggleKey").addEventListener("click", () => { const i = $("cfgKey"); i.type = i.type === "password" ? "text" : "password"; $("toggleKey").textContent = i.type === "password" ? "Show" : "Hide"; });
+    $("testBridge").addEventListener("click", async () => { $("bridgeMsg").textContent = "Testing…"; await refreshStatus(); });
+    connState();
+  }
+
+  // ------------------------------------------------------------ brief
+  const ARCHIVE_GOAL = "launch the new cold brew with short videos and grow Instagram and TikTok followers";
+  function fillBrief(cfg) {
+    const c = cfg.client;
+    $("bBrand").value = c.brand; $("bProduct").value = c.product; $("bAudience").value = c.audience; $("bTone").value = c.tone;
+    $("bGoal").value = c.goal; $("bPlatforms").value = c.platforms.join(", "); $("bRules").value = c.brand_rules.join("\n");
+    briefSummary();
+  }
+  function readBrief() {
+    const cfg = JSON.parse(JSON.stringify(A.DEFAULT_CONFIG));
+    cfg.client = {
+      brand: $("bBrand").value.trim(), product: $("bProduct").value.trim(), audience: $("bAudience").value.trim(), tone: $("bTone").value.trim(), goal: $("bGoal").value.trim(),
+      platforms: $("bPlatforms").value.split(",").map((s) => s.trim()).filter(Boolean),
+      brand_rules: $("bRules").value.split("\n").map((s) => s.trim()).filter(Boolean)
+    };
+    return cfg;
+  }
+  function briefSummary() { $("briefSummary").textContent = ($("bBrand").value || "No brand") + " · " + ($("bProduct").value.split(",")[0] || "no product"); }
+  function initBrief() {
+    let saved = null;
+    try { saved = JSON.parse(store.get("ag_brief") || "null"); } catch (e) { saved = null; }
+    fillBrief(saved && saved.client ? saved : A.DEFAULT_CONFIG);
+    ["bBrand", "bProduct", "bAudience", "bTone", "bGoal", "bPlatforms", "bRules"].forEach((id) => $(id).addEventListener("input", () => { briefSummary(); store.set("ag_brief", JSON.stringify(readBrief())); }));
+    $("briefReset").addEventListener("click", () => { fillBrief(A.DEFAULT_CONFIG); store.set("ag_brief", ""); });
+  }
+
+  // ------------------------------------------------------------ team
+  const NAMES = {}; A.DEFAULT_CONFIG.agents.forEach((a) => { NAMES[a.id] = a; });
+  const ALL = A.ORDER.concat(["project-manager"]);
+  const state = { source: "archive", outputs: {}, meta: {}, status: {}, cfg: null, running: false };
+  function agentInfo(id) { return id === "project-manager" ? A.PM : A.AGENTS[id]; }
+  function fromText(id) {
+    if (id === "project-manager") return "Gets: the run log of all 7 agents";
+    const needs = A.AGENTS[id].needs;
+    return needs.length ? "Gets work from: " + needs.map((n) => NAMES[n].name).join(", ") : "Starts the run (reads the client brief)";
+  }
+  function renderTeam() {
+    $("teamGrid").innerHTML = ALL.map((id, i) => {
+      const a = NAMES[id], info = agentInfo(id);
+      return '<div class="acard' + (id === "project-manager" ? " pm" : "") + '" id="ac-' + id + '"><div class="ahead"><span class="anum">' + (i + 1) + '</span><div><div class="an">' + esc(a.name) + '</div><div class="kit">Base kit: ' + esc(a.kit) + "</div></div></div>" +
+        '<p class="task">' + esc(info.gives) + '</p><p class="from">' + esc(fromText(id)) + "</p>" +
+        '<div class="afoot"><span class="model" id="am-' + id + '"></span><span class="pill" id="ap-' + id + '">Waiting</span></div>' +
+        '<button type="button" class="open" id="ao-' + id + '" data-id="' + id + '" disabled>Open output</button></div>';
+    }).join("");
+    $("teamGrid").querySelectorAll(".open").forEach((b) => b.addEventListener("click", () => openOutput(b.getAttribute("data-id"))));
+  }
+  function setCard(id, cls, pill, model) {
+    const c = $("ac-" + id);
+    c.classList.remove("running", "done", "failed");
+    if (cls) c.classList.add(cls);
+    const p = $("ap-" + id);
+    p.className = "pill " + (cls === "done" ? "done" : cls === "failed" ? "failed" : cls === "running" ? "running" : cls === "archived" ? "archived" : "wait");
+    p.textContent = pill;
+    if (model != null) $("am-" + id).textContent = model;
+    $("ao-" + id).disabled = !state.outputs[id];
+  }
+  function openOutput(id) {
+    const a = NAMES[id], info = agentInfo(id);
+    $("outKicker").textContent = (ALL.indexOf(id) + 1) + " · " + info.file + (state.meta[id] && state.meta[id].model ? " · " + state.meta[id].model : "");
+    $("outTitle").textContent = a.name + ": " + info.task;
+    $("outBody").innerHTML = mdToHtml(state.outputs[id]);
+    $("outDialog").showModal();
+  }
+  function logRowHtml(r) {
+    const ok = /^Done/.test(r.status);
+    const sh = r.sheet === "ok" ? '<td class="sh ok">✓ logged</td>' : r.sheet === "sent" ? '<td class="sh ok">✓ sent</td>' : r.sheet === "skip" ? '<td class="sh">not set</td>' : r.sheet === "wait" ? '<td class="sh">…</td>' : r.sheet ? '<td class="sh" title="' + esc(r.sheet) + '">✕ failed</td>' : '<td class="sh">–</td>';
+    return "<tr><td>" + esc(r.time) + "</td><td><b>" + esc(r.agent) + "</b></td><td>" + esc(r.task) + '</td><td class="st ' + (ok ? "ok" : "bad") + '">' + esc(r.status) + "</td>" + sh + "</tr>";
+  }
+  function renderLog(rows) { $("logBody").innerHTML = rows.length ? rows.map(logRowHtml).join("") : '<tr class="emptyrow"><td colspan="5">The run log appears here.</td></tr>'; }
+  function showArchive() {
+    state.source = "archive";
+    state.outputs = Object.assign({}, ARCH.outputs);
+    state.meta = ARCH.meta || {};
+    const cfg = JSON.parse(JSON.stringify(A.DEFAULT_CONFIG)); cfg.client.goal = ARCHIVE_GOAL;
+    state.cfg = cfg;
+    ALL.forEach((id) => setCard(id, "archived", "Done", state.meta[id] ? "last run · " + state.meta[id].time : "last run"));
+    renderLog(ALL.map((id) => ({ time: (state.meta[id] || {}).time || "–", agent: NAMES[id].name, task: agentInfo(id).task, status: "Done", sheet: "ok" })));
+    $("pmBrief").innerHTML = mdToHtml(state.outputs["project-manager"]);
+    $("mailState").textContent = "Emailed after the last real run";
+    $("sheetState").textContent = "Last real run, logged in the Google Sheet";
+    $("toReview").disabled = false;
+    $("loadTeamSub").textContent = "The last real run of the 8 agents (made with the old, non-measurable goal)";
+    $("teamStatus").textContent = "Showing the last real run from GitHub";
+    $("teamSub").textContent = "Real outputs of the agents' last run. It used the old goal, before the Review Board asked for a SMART goal. Press the button to create a new campaign now.";
+  }
+
+  async function runTeam() {
+    if (state.running) return;
+    const key = $("cfgKey").value.trim();
+    const cfg = readBrief();
+    if (!cfg.client.brand || !cfg.client.product) { $("teamStatus").textContent = "The brief needs a brand and a product"; $("briefCard").open = true; return; }
+    let runId = "";
+    if (!key) {
+      if (!Bridge.url()) { $("teamStatus").textContent = "The Google bridge is not set"; $("teamSub").textContent = "Open Connections (top right) and add the Apps Script web app URL."; $("connDialog").showModal(); return; }
+      $("teamRun").disabled = true;
+      $("teamStatus").textContent = "Starting the live run…";
+      try { const st = await Bridge.start("team"); runId = st.runId; $("teamLimit").textContent = st.left + " of 20 live runs left today"; }
+      catch (e) { $("teamRun").disabled = false; $("teamStatus").textContent = "The live run could not start"; $("teamSub").textContent = e.message; return; }
+    }
+    const ask = (prompt, onModel) => key ? AI.generate(key, prompt, onModel) : (onModel && onModel("Gemini"), Bridge.gemini(runId, prompt, false));
+    state.running = true; state.source = "live"; state.outputs = {}; state.meta = {}; state.cfg = cfg;
+    $("teamRun").disabled = true; $("toReview").disabled = true;
+    $("teamStatus").textContent = "The team is working… (about 1 minute)";
+    $("teamSub").textContent = "Each agent gets the work of its teammates, writes its part with Gemini and logs a row in the Google Sheet.";
+    ALL.forEach((id) => setCard(id, null, "Waiting", ""));
+    const rows = [];
+    renderLog(rows);
+    $("pmBrief").innerHTML = '<p class="placeholder">The Project Manager writes the brief after the 7 agents finish.</p>';
+    $("mailState").textContent = "";
+    $("sheetState").textContent = Bridge.url() ? "Every row is also sent to the Google Sheet" : "Sheet bridge not set: rows stay on this page";
+    let keyFailed = null;
+    for (const id of A.ORDER) {
+      const agent = A.AGENTS[id];
+      setCard(id, "running", "Working…", "");
+      const prev = {};
+      agent.needs.forEach((d) => { prev[d] = state.outputs[d] && !state.meta[d].failed ? state.outputs[d] : ""; });
+      const missing = agent.needs.filter((d) => !prev[d]);
+      let status = "Done", text, model = "";
+      try {
+        if (keyFailed) throw new Error(keyFailed);
+        const r = await ask(agent.prompt(cfg, prev), (m) => { $("am-" + id).textContent = "Thinking with " + m + "…"; });
+        text = r.text; model = r.model;
+      } catch (e) {
+        status = "Failed: " + String(e.message).slice(0, 120);
+        text = "# " + NAMES[id].name + "\n\nThe run failed: " + e.message + "\n";
+        if (/rejected|not set in the Apps Script|daily (ai )?limit|no open live run/i.test(e.message)) keyFailed = e.message;
+      }
+      if (keyFailed) {
+        // a wrong key is not real work: stop, log nothing, keep the ledger clean
+        setCard(id, "failed", "Failed", "");
+        A.ORDER.concat(["project-manager"]).slice(A.ORDER.indexOf(id) + 1).forEach((x) => setCard(x, null, "Not run", ""));
+        state.outputs = {}; ALL.forEach((x) => { $("ao-" + x).disabled = true; });
+        renderLog([]);
+        $("teamStatus").textContent = "Stopped: the AI could not work";
+        $("teamSub").textContent = keyFailed + " Nothing was logged.";
+        $("pmBrief").innerHTML = '<p class="placeholder">No brief: the run stopped before the agents could work.</p>';
+        $("sheetState").textContent = "Nothing was sent to the Google Sheet";
+        $("teamRun").disabled = false; $("toReview").disabled = true;
+        $("loadTeamSub").textContent = "No campaign yet: run the agents again";
+        state.source = "none"; state.running = false;
+        return;
+      }
+      if (missing.length && status === "Done") status = "Done (partial input)";
+      state.outputs[id] = text;
+      state.meta[id] = { time: nowTime(), model: model, failed: !/^Done/.test(status) };
+      setCard(id, /^Done/.test(status) ? "done" : "failed", /^Done/.test(status) ? "Done" : "Failed", model ? model : "");
+      const row = { time: nowTime(), agent: NAMES[id].name, task: agent.task, status: status, sheet: Bridge.url() ? "wait" : "skip" };
+      rows.push(row); renderLog(rows);
+      if (Bridge.url()) {
+        const res = await Bridge.log([[nowStamp(), NAMES[id].name, agent.task, status]]);
+        row.sheet = res.ok ? (res.unconfirmed ? "sent" : "ok") : (res.error || "failed");
+        renderLog(rows);
+      }
+    }
+    // Project Manager
+    const pmId = "project-manager";
+    setCard(pmId, "running", "Auditing…", "");
+    const audit = A.ORDER.map((id) => ({ agent: NAMES[id].name, task: A.AGENTS[id].task, status: rows.find((r) => r.agent === NAMES[id].name).status, time: state.meta[id].time, file: A.AGENTS[id].file }));
+    let next = ["Review today's drafts in the outputs folder.", "Approve Video 1 script before filming.", "Rerun any agent that failed."];
+    let pmModel = "";
+    if (!keyFailed) {
+      try {
+        const r = await ask(A.pmPrompt(cfg, audit), (m) => { $("am-" + pmId).textContent = "Thinking with " + m + "…"; });
+        const lines = r.text.split("\n").map((l) => l.replace(/^[-*\d.\s]+/, "").trim()).filter(Boolean).slice(0, 3);
+        if (lines.length) next = lines;
+        pmModel = r.model;
+      } catch (e) { /* default next steps */ }
+    }
+    const brief = A.pmBrief(cfg, audit, next);
+    state.outputs[pmId] = brief.md;
+    state.meta[pmId] = { time: nowTime(), model: pmModel, failed: false };
+    $("pmBrief").innerHTML = mdToHtml(brief.md);
+    const pmStatus = brief.failed ? "Done (team has failures)" : "Done";
+    setCard(pmId, "done", "Done", pmModel);
+    const pmRow = { time: nowTime(), agent: NAMES[pmId].name, task: "Audited " + audit.length + " agents, wrote and emailed the daily brief", status: pmStatus, sheet: Bridge.url() ? "wait" : "skip" };
+    rows.push(pmRow); renderLog(rows);
+    if (Bridge.url()) {
+      const res = await Bridge.log([[nowStamp(), NAMES[pmId].name, pmRow.task, pmStatus]]);
+      pmRow.sheet = res.ok ? (res.unconfirmed ? "sent" : "ok") : (res.error || "failed");
+      renderLog(rows);
+      $("mailState").textContent = "Sending the email…";
+      const to = $("cfgEmail").value.trim();
+      const mail = await Bridge.email({ runId: runId, to: to, subject: "[" + cfg.client.brand + "] Daily Status Bulletin: " + brief.done + "/7 done", html: A.pmEmailHtml(cfg, audit, next, brief, real(SITE.sheetUrl)), text: brief.md });
+      $("mailState").textContent = mail.ok ? (mail.unconfirmed ? "✓ Email sent (no confirmation from Google)" : "✓ Email sent to " + (mail.sent || to || "the Sheet owner")) : "✕ Email not sent: " + (mail.error || "error");
+    } else $("mailState").textContent = "Email needs the Sheet bridge (Connections)";
+    $("teamStatus").textContent = brief.failed ? "Finished: " + brief.done + " of 7 agents done, " + brief.failed + " failed" : "Finished: all 7 agents done, Project Manager reported";
+    $("teamSub").textContent = brief.failed ? "Open the failed cards to see why, then run again." : "Open any card to read its work, or send the campaign to the Review Board.";
+    $("loadTeamSub").textContent = "The campaign from the live run";
+    $("teamRun").disabled = false; $("teamRun").textContent = "Run the 8 agents again";
+    refreshStatus();
+    $("toReview").disabled = false;
+    state.running = false;
+  }
+  function campaignText() {
+    return A.buildCampaignDoc(state.cfg || readBrief(), state.outputs, E.looksLikeHeading);
+  }
+  function sendToReview() {
+    if (state.running || state.source === "none") return;
+    location.hash = "#review";
+    window.ReviewBoardApp.loadDoc(campaignText(), state.source === "live" ? "Campaign from the live run" : "Campaign from the last real run", "marketing", true);
+  }
+
+  // ------------------------------------------------------------ proof
+  function initProof() {
+    const set = (id, url) => { const a = $(id); if (url) a.href = url; else a.remove(); };
+    set("pSheet", real(SITE.sheetUrl)); set("pRepo", SITE.repoUrl); set("pVideo", real(SITE.videoUrl));
+    const b = SITE.repoUrl + "/blob/main/";
+    const rows = [
+      ["Client brief and the team", "Client, brand rules, platforms and the 8 agents with their base kits", "agency.config.json"],
+      ["The 8 AI employees", "Role, input from teammates and the exact prompt of each agent", "src/agents.mjs"],
+      ["Team runner", "Runs the 7 agents in order and logs every run", "src/run-agents.mjs"],
+      ["Project Manager", "Audits the team, writes the daily brief, logs it and emails it", "src/project-manager.mjs"],
+      ["Bridge 1: Gemini", "Calls the Gemini API, retries and falls back to another model", "src/gemini.mjs"],
+      ["Bridge 2: Google", "Sends ledger rows and the email to the Apps Script web app", "src/sheets.mjs"],
+      ["Apps Script", "Writes the Google Sheet, sends Gmail, keeps the Gemini key hidden, limits live runs to 20 a day", "apps-script/Code.gs"],
+      ["Hired employees", "The ai-employees kits installed for each agent", "employees/"],
+      ["This website", "Overview, live Creative Team, Review Board and this page", "index.html"]
+    ];
+    $("codeRows").innerHTML = rows.map((r) => "<tr><td><b>" + esc(r[0]) + "</b></td><td>" + esc(r[1]) + '</td><td><a href="' + esc(b.replace("/blob/main/", r[2].endsWith("/") ? "/tree/main/" : "/blob/main/") + r[2].replace(/\/$/, "")) + '" target="_blank" rel="noopener">' + esc(r[2]) + "</a></td></tr>").join("");
+  }
+
+  function init() {
+    initConnections();
+    initBrief();
+    renderTeam();
+    showArchive();
+    initProof();
+    refreshStatus();
+    $("teamRun").addEventListener("click", runTeam);
+    $("toReview").addEventListener("click", sendToReview);
+    $("loadTeam").addEventListener("click", () => state.source !== "none" && !state.running && window.ReviewBoardApp.loadDoc(campaignText(), state.source === "live" ? "Campaign from the live run" : "Campaign from the last real run", "marketing", false));
+    $("outClose").addEventListener("click", () => $("outDialog").close());
+    $("outDialog").addEventListener("click", (e) => { if (e.target === $("outDialog")) $("outDialog").close(); });
+    window.addEventListener("hashchange", showPage);
+    showPage();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+  window.AgencyUI = { refreshStatus: refreshStatus, state: state, mdToHtml: mdToHtml, AI: AI, runTeam: runTeam, campaignText: campaignText };
 })();
 </script>
 <script type="text/plain" id="pdfjs-lib">/**
