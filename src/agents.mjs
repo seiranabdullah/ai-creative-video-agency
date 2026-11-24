@@ -35,7 +35,7 @@ export const AGENTS = {
     task: "Wrote video scripts, hooks and captions",
     file: "03-scripts-and-captions.md",
     needs: ["marketing-coordinator"],
-    prompt: (cfg, prev) => `You are the Copywriter in an AI marketing agency.\n${brandBlock(cfg)}\n\nCampaign plan from the Marketing Coordinator:\n${cut(prev["marketing-coordinator"])}\n\nTask: write content for the first 2 videos of the calendar. For each video give:\n- Title\n- Hook (first 2 seconds)\n- Script as a table: Time | What we see | Voice-over / text on screen (15-30 seconds total)\n- Caption with 3-5 hashtags\nAlso give 3 extra hook ideas.\n${STYLE}`,
+    prompt: (cfg, prev) => `You are the Copywriter in an AI marketing agency.\n${brandBlock(cfg)}\n\nCampaign plan from the Marketing Coordinator:\n${cut(prev["marketing-coordinator"])}\n\nTask: write content for the first 2 videos of the calendar. For each video give:\n- Title\n- Hook (first 2 seconds)\n- Script as a table: Time | What we see | Voice-over / text on screen (15-30 seconds total)\n- Caption with 3-5 hashtags\n- Call to action (CTA): one short line that asks viewers to act\nAlso give 3 extra hook ideas.\n${STYLE}`,
   },
   "graphic-designer": {
     task: "Created the design brief and AI image prompts",
@@ -53,7 +53,7 @@ export const AGENTS = {
     task: "Adapted posts per platform and drafted replies",
     file: "06-social-posting-and-replies.md",
     needs: ["copywriter", "marketing-coordinator"],
-    prompt: (cfg, prev) => `You are the Social Media Manager in an AI marketing agency.\n${brandBlock(cfg)}\n\nScripts and captions from the Copywriter:\n${cut(prev.copywriter, 1800)}\n\nTask:\n1. Posting plan for Video 1: a table with Platform | Best time | Caption version | Hashtags.\n2. Check each caption against the brand rules and say "OK" or what to fix.\n3. Here are 4 sample comments from followers. Sort each one (Question / Praise / Complaint / Spam) and draft a short, friendly reply:\n   a) "Where can I buy this in Riga?"\n   b) "Too sweet for me :("\n   c) "Love the can design!!"\n   d) "Check my profile for free followers"\n${STYLE}`,
+    prompt: (cfg, prev) => `You are the Social Media Manager in an AI marketing agency.\n${brandBlock(cfg)}\n\nScripts and captions from the Copywriter:\n${cut(prev.copywriter, 1800)}\n\nTask:\n1. Posting plan for Video 1: a table with Platform | Best time | Caption version | Hashtags, with one row for every platform: ${cfg.client.platforms.join(", ")}.\n2. Check each caption against the brand rules and say "OK" or what to fix.\n3. Here are 4 sample comments from followers. Sort each one (Question / Praise / Complaint / Spam) and draft a short, friendly reply:\n   a) "Where can I buy this in Riga?"\n   b) "Too sweet for me :("\n   c) "Love the can design!!"\n   d) "Check my profile for free followers"\n${STYLE}`,
   },
   "sales-partnerships-manager": {
     task: "Built the influencer and partner outreach list",
